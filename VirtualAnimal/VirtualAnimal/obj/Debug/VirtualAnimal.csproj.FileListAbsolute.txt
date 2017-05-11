@@ -8,3 +8,5 @@ C:\Users\SULZBACHJ_INFO\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\De
 C:\Users\SULZBACHJ_INFO\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.pdb
 C:\Users\SULZBACHJ_INFO\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.VirtualAnimalView.resources
 C:\Users\SULZBACHJ_INFO\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.VirtualAnimalStore.resources
+C:\Users\SULZBACHJ_INFO\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.VirtualAnimalFood.resources
+C:\Users\SULZBACHJ_INFO\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.VirtualAnimalMaterials.resources

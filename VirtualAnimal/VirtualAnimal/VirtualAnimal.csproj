@@ -44,7 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animal.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="SaveAndUpdate.cs" />
+    <Compile Include="VirtualAnimalFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VirtualAnimalFood.Designer.cs">
+      <DependentUpon>VirtualAnimalFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VirtualAnimalMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VirtualAnimalMaterials.Designer.cs">
+      <DependentUpon>VirtualAnimalMaterials.cs</DependentUpon>
+    </Compile>
     <Compile Include="VirtualAnimalStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +74,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Store.cs" />
     <Compile Include="VirtualViewModel.cs" />
+    <EmbeddedResource Include="VirtualAnimalFood.resx">
+      <DependentUpon>VirtualAnimalFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VirtualAnimalMaterials.resx">
+      <DependentUpon>VirtualAnimalMaterials.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VirtualAnimalStore.resx">
       <DependentUpon>VirtualAnimalStore.cs</DependentUpon>
     </EmbeddedResource>

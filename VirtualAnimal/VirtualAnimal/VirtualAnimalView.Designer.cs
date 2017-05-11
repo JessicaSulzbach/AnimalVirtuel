@@ -162,6 +162,7 @@
             this.btnInventory.TabIndex = 3;
             this.btnInventory.Text = "Inventaire";
             this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // btnGoOut
             // 
@@ -187,13 +188,13 @@
             // tsmPet
             // 
             this.tsmPet.Name = "tsmPet";
-            this.tsmPet.Size = new System.Drawing.Size(152, 22);
+            this.tsmPet.Size = new System.Drawing.Size(147, 22);
             this.tsmPet.Text = "Caresser";
             // 
             // tsmSleep
             // 
             this.tsmSleep.Name = "tsmSleep";
-            this.tsmSleep.Size = new System.Drawing.Size(152, 22);
+            this.tsmSleep.Size = new System.Drawing.Size(147, 22);
             this.tsmSleep.Text = "Dormir";
             // 
             // tsmNap
@@ -216,12 +217,14 @@
             this.tsmFood.Name = "tsmFood";
             this.tsmFood.Size = new System.Drawing.Size(156, 22);
             this.tsmFood.Text = "Aliments";
+            this.tsmFood.Click += new System.EventHandler(this.tsmFood_Click);
             // 
             // tsmMaterials
             // 
             this.tsmMaterials.Name = "tsmMaterials";
             this.tsmMaterials.Size = new System.Drawing.Size(156, 22);
             this.tsmMaterials.Text = "Matériaux";
+            this.tsmMaterials.Click += new System.EventHandler(this.tsmMaterials_Click);
             // 
             // cmsForGoOutButton
             // 
@@ -262,6 +265,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "VirtualAnimalView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Animal virtuel";
             this.Load += new System.EventHandler(this.VirtualAnimalView_Load);
             this.groupBox1.ResumeLayout(false);

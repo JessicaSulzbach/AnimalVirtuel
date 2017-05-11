@@ -8,5 +8,6 @@ namespace VirtualAnimal
 {
     class Store
     {
+        Dictionary<string, int> StoreDictionary = new Dictionary<string, int>();
     }
 }

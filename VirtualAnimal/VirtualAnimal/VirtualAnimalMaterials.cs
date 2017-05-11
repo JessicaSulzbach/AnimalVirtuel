@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace VirtualAnimal
 {
-    public partial class VirtualAnimalStore : Form
+    public partial class VirtualAnimalMaterials : Form
     {
-        public VirtualAnimalStore()
+        public VirtualAnimalMaterials()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnMaterialsBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
