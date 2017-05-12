@@ -13,80 +13,70 @@ namespace VirtualAnimal
 {
     public partial class VirtualAnimalView : Form
     {
-        Animal TheAnimal = new Animal();
+        
+        private Animal _theAnimal;
+        private DataRecovery _saveOrRecover;
+
+        internal DataRecovery SaveOrRecover
+        {
+            get { return _saveOrRecover; }
+            set { _saveOrRecover = value; }
+        }
+        internal Animal TheAnimal
+        {
+            get { return _theAnimal; }
+            set { _theAnimal = value; }
+        }
+
 
         public VirtualAnimalView()
         {
             InitializeComponent();
 
-            ProgressBarInitialize();
+            TheAnimal = new Animal();
+            SaveOrRecover = new DataRecovery();
+
         }
 
         private void VirtualAnimalView_Load(object sender, EventArgs e)
         {
-            // Starts the background worker
-            bgwForProgressBar.RunWorkerAsync();
+            // Initializes the necessary components 
+            ProgressBarInitialize();
+        }
 
+        #region ProgressBar
+
+        private void ProgressBarInitialize()
+        {
             // Iniciates the value of the progress bar 
             prbEnergy.Value = TheAnimal.Energy;
             prbHealth.Value = TheAnimal.Health;
             prbHygene.Value = TheAnimal.Hygene;
             prbHappiness.Value = TheAnimal.Happiness;
-            
+
+            tmrProgressBar.Enabled = true;
+            tmrProgressBar.Start();
+            tmrProgressBar.Interval = 1000;
         }
 
-        #region ProgressBarTimer
-
-        private void ProgressBarInitialize()
+        private void tmrProgressBar_Tick(object sender, EventArgs e)
         {
-            // To report progress from the background worker it has to be activated
-            bgwForProgressBar.WorkerReportsProgress = true;
-            // This event will be called when the worker starts
-            bgwForProgressBar.DoWork += new DoWorkEventHandler(bgwForProgressBar_DoWork);
-            // This event will be called when ReportProgress is called
-            bgwForProgressBar.ProgressChanged += new ProgressChangedEventHandler(bgwForProgressBar_ProgressChanged);
-        }
-
-        private void bgwForProgressBar_DoWork(object sender, DoWorkEventArgs e)
-        {
-            // Always true
-            bool DoItAgain = true;
-
-            while(DoItAgain == true)
+            if (prbHealth.Value != 0)
             {
-                if (prbHealth.Value != 0)
-                {
-                    // Report progress to 'UI' thread
-                    bgwForProgressBar.ReportProgress(prbHealth.Value - 1); 
-                }
-                if (prbEnergy.Value != 0)
-                {
-                    // Report progress to 'UI' thread
-                     bgwForProgressBar.ReportProgress(prbEnergy.Value - 1); 
-                }
-                if (prbHygene.Value != 0)
-                {
-                    // Report progress to 'UI' thread
-                    bgwForProgressBar.ReportProgress(prbHygene.Value - 1);  
-                }
-                if (prbHappiness.Value != 0)
-                {
-                    // Report progress to 'UI' thread
-                    bgwForProgressBar.ReportProgress(prbHappiness.Value - 1);  
-                }
-
-                // Simulate long task (wait)
-                System.Threading.Thread.Sleep(500);
-            }     
-        }
-
-        private void bgwForProgressBar_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            // Change the value of the ProgressBar to the BackgroundWorker progress.
-            prbHealth.Value = e.ProgressPercentage;
-            prbHappiness.Value = e.ProgressPercentage;
-            prbHygene.Value = e.ProgressPercentage;
-            prbEnergy.Value = e.ProgressPercentage;
+                prbHealth.Value--;
+            }
+            if (prbEnergy.Value != 0)
+            {
+                prbEnergy.Value--;
+            }
+            if (prbHygene.Value != 0)
+            {
+                prbHygene.Value--;
+            }
+            if (prbHappiness.Value != 0)
+            {
+                prbHappiness.Value--;
+            }
         }
 
         #endregion
@@ -130,7 +120,20 @@ namespace VirtualAnimal
             materials.ShowDialog(this);
         }
 
-        #endregion 
+        #endregion
+
+
+        private void VirtualAnimalView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            int SavePrbHeath = prbHealth.Value;
+            int SavePrbHappiness = prbHappiness.Value;
+            int SavePrbHygene = prbHygene.Value;
+            int SavePrbEnergy = prbEnergy.Value;
+
+            tmrProgressBar.Enabled = false;
+
+            this.TheAnimal.Animal_Save(SavePrbHeath, SavePrbHappiness, SavePrbHygene, SavePrbEnergy);
+
+        }
     }
 }
-

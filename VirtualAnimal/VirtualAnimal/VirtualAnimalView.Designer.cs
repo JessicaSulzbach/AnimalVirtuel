@@ -52,6 +52,7 @@
             this.tsmStore = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmWalk = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwForProgressBar = new System.ComponentModel.BackgroundWorker();
+            this.tmrProgressBar = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.cmsForAnimalButton.SuspendLayout();
             this.cmsForInventoryButton.SuspendLayout();
@@ -248,10 +249,9 @@
             this.tsmWalk.Size = new System.Drawing.Size(167, 22);
             this.tsmWalk.Text = "Promenade";
             // 
-            // bgwForProgressBar
+            // tmrProgressBar
             // 
-            this.bgwForProgressBar.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwForProgressBar_DoWork);
-            this.bgwForProgressBar.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bgwForProgressBar_ProgressChanged);
+            this.tmrProgressBar.Tick += new System.EventHandler(this.tmrProgressBar_Tick);
             // 
             // VirtualAnimalView
             // 
@@ -267,6 +267,7 @@
             this.Name = "VirtualAnimalView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Animal virtuel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VirtualAnimalView_FormClosing);
             this.Load += new System.EventHandler(this.VirtualAnimalView_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -302,6 +303,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmStore;
         private System.Windows.Forms.ToolStripMenuItem tsmWalk;
         private System.ComponentModel.BackgroundWorker bgwForProgressBar;
+        private System.Windows.Forms.Timer tmrProgressBar;
     }
 }
 

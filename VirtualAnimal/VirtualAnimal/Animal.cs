@@ -9,12 +9,13 @@ namespace VirtualAnimal
     class Animal
     {
         //Variables
-        private int _hygene = 100;
-        private int _energy = 100;
-        private int _health = 100;
-        private int _happiness = 100;
+        private int _hygene;
+        private int _energy;
+        private int _health;
+        private int _happiness;
         private double _money;
-        
+        private DataRecovery _saveOrRecover;
+
         // Properties 
         public int Hygene
         {
@@ -41,14 +42,37 @@ namespace VirtualAnimal
             get { return _health; }
             set { _health = value; }
         }
+        public DataRecovery SaveOrRecover
+        {
+            get { return _saveOrRecover; }
+            set { _saveOrRecover = value; }
+        }
 
         // Constructor
         public Animal()
         {
-
+            SaveOrRecover = new DataRecovery();
+            Animal_Recover();
         }
 
         // Methods
+        public void Animal_Recover()
+        {
+            SaveOrRecover.FileReader("Save_Animal.txt");
+            this.Health = SaveOrRecover.DataToRecover_Animal["Health"];
+            this.Hygene = SaveOrRecover.DataToRecover_Animal["Hygene"];
+            this.Energy = SaveOrRecover.DataToRecover_Animal["Energy"];
+            this.Happiness = SaveOrRecover.DataToRecover_Animal["Happiness"];
+        }
+
+        public void Animal_Save(int SavePrbHealth, int SavePrbHygene, int SavePrbEnergy, int SavePrbHappyiness)
+         {
+             SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(SavePrbHealth));
+             SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(SavePrbHygene));
+             SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(SavePrbEnergy));
+             SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(SavePrbHappyiness));
+        }
+
         public void Animations(int nbAnimation)
         {
             switch(nbAnimation)
