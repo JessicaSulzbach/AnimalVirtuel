@@ -35,7 +35,6 @@
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.tlpStore = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tlpStore.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +68,7 @@
             this.btnBuy.TabIndex = 2;
             this.btnBuy.Text = "Acheter";
             this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // lblWallet
             // 
@@ -117,26 +117,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 11);
+            this.label3.Location = new System.Drawing.Point(5, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 20);
+            this.label3.Size = new System.Drawing.Size(75, 18);
             this.label3.TabIndex = 0;
             this.label3.Text = "Produits";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(374, 30);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 6;
             // 
             // VirtualAnimalStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 299);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.tlpStore);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.lblWallet);
@@ -166,6 +157,5 @@
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.TableLayoutPanel tlpStore;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }

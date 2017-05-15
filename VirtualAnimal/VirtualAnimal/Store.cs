@@ -10,6 +10,7 @@ namespace VirtualAnimal
     {
         private DataRecovery _saveOrRecover;
         private Dictionary<string, double> _DataStore;
+        //private List<string> _seperateData = new List<string>();
 
         public Dictionary<string, double> DataStore
         {
@@ -22,6 +23,8 @@ namespace VirtualAnimal
             get { return _saveOrRecover; }
             set { _saveOrRecover = value; }
         }
+
+        //public List<string> SeperateData { get => _seperateData; set => _seperateData = value; }
 
         public Store()
         {
@@ -43,19 +46,16 @@ namespace VirtualAnimal
             foreach (var item in SaveOrRecover.DataToRecover_Store)
             {
                 SeperateData.AddRange(item.Split(';').ToList());
-
             }
 
-            for (int i = 0; i < SeperateData.Count; i = i + 2)
+            for (int i = 0; i < SeperateData.Count - 1; i = i + 2)
             {
                 for (int y = 1; y < SeperateData.Count; y = y + 2)
                 {
                     DataStore.Add(SeperateData[i], Convert.ToDouble(SeperateData[y]));
+                    i = i + 2;
                 }
             }
-            
         }
-
-
     }
 }

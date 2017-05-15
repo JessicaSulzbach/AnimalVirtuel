@@ -10,3 +10,15 @@ C:\Users\SULZBACHJ_INFO\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\De
 C:\Users\SULZBACHJ_INFO\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.VirtualAnimalStore.resources
 C:\Users\SULZBACHJ_INFO\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.VirtualAnimalFood.resources
 C:\Users\SULZBACHJ_INFO\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.VirtualAnimalMaterials.resources
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\bin\Debug\VirtualAnimal.exe.config
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\bin\Debug\VirtualAnimal.exe
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\bin\Debug\VirtualAnimal.pdb
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.csprojResolveAssemblyReference.cache
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.VirtualAnimalFood.resources
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.VirtualAnimalMaterials.resources
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.VirtualAnimalStore.resources
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.VirtualAnimalView.resources
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.Properties.Resources.resources
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.csproj.GenerateResource.Cache
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.exe
+C:\Users\Jessica\Desktop\AnimalVirtuel\VirtualAnimal\VirtualAnimal\obj\Debug\VirtualAnimal.pdb

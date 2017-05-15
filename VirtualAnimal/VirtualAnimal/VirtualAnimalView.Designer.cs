@@ -107,11 +107,12 @@
             // 
             this.lblHappiness.AutoSize = true;
             this.lblHappiness.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHappiness.Location = new System.Drawing.Point(6, 124);
+            this.lblHappiness.Location = new System.Drawing.Point(35, 124);
             this.lblHappiness.Name = "lblHappiness";
             this.lblHappiness.Size = new System.Drawing.Size(40, 18);
             this.lblHappiness.TabIndex = 3;
             this.lblHappiness.Text = "Joie";
+            this.lblHappiness.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblEnergy
             // 
@@ -122,12 +123,14 @@
             this.lblEnergy.Size = new System.Drawing.Size(69, 18);
             this.lblEnergy.TabIndex = 2;
             this.lblEnergy.Text = "Energie";
+            this.lblEnergy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblHygene
             // 
             this.lblHygene.AutoSize = true;
             this.lblHygene.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHygene.Location = new System.Drawing.Point(6, 52);
+            this.lblHygene.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblHygene.Location = new System.Drawing.Point(1, 52);
             this.lblHygene.Name = "lblHygene";
             this.lblHygene.Size = new System.Drawing.Size(74, 18);
             this.lblHygene.TabIndex = 1;
@@ -137,7 +140,8 @@
             // 
             this.lblHealth.AutoSize = true;
             this.lblHealth.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHealth.Location = new System.Drawing.Point(6, 16);
+            this.lblHealth.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblHealth.Location = new System.Drawing.Point(20, 21);
             this.lblHealth.Name = "lblHealth";
             this.lblHealth.Size = new System.Drawing.Size(55, 18);
             this.lblHealth.TabIndex = 0;
