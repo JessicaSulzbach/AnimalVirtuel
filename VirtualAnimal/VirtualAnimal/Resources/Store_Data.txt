@@ -1,7 +1,0 @@
-Riz;15.00
-Sushi;35.00
-Bonbons;10.00
-Shampooing;18.50
-Brosse;12.00
-Papillon bleu;500.00
-Ruban rose;500.00

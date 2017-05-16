@@ -10,7 +10,6 @@ namespace VirtualAnimal
     {
         private DataRecovery _saveOrRecover;
         private Dictionary<string, double> _DataStore;
-        //private List<string> _seperateData = new List<string>();
 
         public Dictionary<string, double> DataStore
         {
@@ -24,38 +23,55 @@ namespace VirtualAnimal
             set { _saveOrRecover = value; }
         }
 
-        //public List<string> SeperateData { get => _seperateData; set => _seperateData = value; }
-
         public Store()
         {
             SaveOrRecover = new DataRecovery();
             DataStore = new Dictionary<string, double>();
 
-            SaveOrRecover.FileReader("Store_Data.txt");
+            SaveOrRecover.FileReader("Product_name_and_price.txt");
 
             StoreData();
-
-
-
         }
 
         public void StoreData()
         {
             DataStore.Clear();
-            List<string> SeperateData = new List<string>();
-            foreach (var item in SaveOrRecover.DataToRecover_Store)
+            for (int i = 0; i < SaveOrRecover.SeperateData.Count - 2; i = i + 3)
             {
-                SeperateData.AddRange(item.Split(';').ToList());
-            }
-
-            for (int i = 0; i < SeperateData.Count - 1; i = i + 2)
-            {
-                for (int y = 1; y < SeperateData.Count; y = y + 2)
+                for (int y = 1; y < SaveOrRecover.SeperateData.Count; y = y + 3)
                 {
-                    DataStore.Add(SeperateData[i], Convert.ToDouble(SeperateData[y]));
-                    i = i + 2;
+                    DataStore.Add(SaveOrRecover.SeperateData[i], Convert.ToDouble(SaveOrRecover.SeperateData[y]));
+                    i = i + 3;
                 }
             }
+        }
+
+        public void Sell(List<int> NewQuantity)
+        {
+            List<int> OldQuantity = new List<int>();
+            for (int i = 2; i < SaveOrRecover.SeperateData.Count; i = i + 3)
+            {
+                OldQuantity.Add(Convert.ToInt32(SaveOrRecover.SeperateData[i]));
+            }
+            for (int i = 0; i < NewQuantity.Count; i++)
+            {
+                NewQuantity[i] = NewQuantity[i] + OldQuantity[i];
+            }
+
+            for (int i = 0; i <= SaveOrRecover.SeperateData.Count - 2; i++)
+            {
+                for (int y = 1; y <= SaveOrRecover.SeperateData.Count - 1; y++)
+                {
+                    for (int j = 0; j <= NewQuantity.Count- 1; j++)
+                    {
+                        string FinalLineToSave = string.Format("{0};{1};{2}", SaveOrRecover.SeperateData[i], SaveOrRecover.SeperateData[y], NewQuantity[j]);
+                        SaveOrRecover.FileWritter("Product_name_and_price.txt", FinalLineToSave);
+                        i = i + 3;
+                        y = y + 3;
+                    }
+                }
+            }
+
         }
     }
 }

@@ -31,6 +31,7 @@
             this.btnMaterialsUse = new System.Windows.Forms.Button();
             this.btnMaterialsSell = new System.Windows.Forms.Button();
             this.btnMaterialsBack = new System.Windows.Forms.Button();
+            this.tlpMaterials = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
             // btnMaterialsUse
@@ -64,11 +65,31 @@
             this.btnMaterialsBack.UseVisualStyleBackColor = true;
             this.btnMaterialsBack.Click += new System.EventHandler(this.btnMaterialsBack_Click);
             // 
+            // tlpMaterials
+            // 
+            this.tlpMaterials.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tlpMaterials.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tlpMaterials.ColumnCount = 3;
+            this.tlpMaterials.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpMaterials.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpMaterials.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpMaterials.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tlpMaterials.Location = new System.Drawing.Point(12, 12);
+            this.tlpMaterials.Name = "tlpMaterials";
+            this.tlpMaterials.RowCount = 4;
+            this.tlpMaterials.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpMaterials.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpMaterials.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpMaterials.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpMaterials.Size = new System.Drawing.Size(249, 166);
+            this.tlpMaterials.TabIndex = 6;
+            // 
             // VirtualAnimalMaterials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(273, 263);
+            this.Controls.Add(this.tlpMaterials);
             this.Controls.Add(this.btnMaterialsBack);
             this.Controls.Add(this.btnMaterialsSell);
             this.Controls.Add(this.btnMaterialsUse);
@@ -78,6 +99,7 @@
             this.Name = "VirtualAnimalMaterials";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Inventaire : Matériaux";
+            this.Load += new System.EventHandler(this.VirtualAnimalMaterials_Load);
             this.ResumeLayout(false);
 
         }
@@ -87,5 +109,6 @@
         private System.Windows.Forms.Button btnMaterialsUse;
         private System.Windows.Forms.Button btnMaterialsSell;
         private System.Windows.Forms.Button btnMaterialsBack;
+        private System.Windows.Forms.TableLayoutPanel tlpMaterials;
     }
 }

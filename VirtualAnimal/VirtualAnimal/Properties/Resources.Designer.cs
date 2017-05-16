@@ -61,30 +61,30 @@ namespace VirtualAnimal.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à 42
-        ///42
-        ///42
-        ///42
+        ///   Recherche une chaîne localisée semblable à Riz;15.00;0
+        ///Sushi;35.00;0
+        ///Bonbons;10.00;0
+        ///Shampooing;18.50;0
+        ///Brosse;12.00;0
+        ///Papillon bleu;500.00;0
+        ///Ruban rose;500.00;0.
+        /// </summary>
+        internal static string Product_name_and_price {
+            get {
+                return ResourceManager.GetString("Product_name_and_price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à 0
+        ///0
+        ///0
+        ///0
         ///.
         /// </summary>
         internal static string Save_Animal {
             get {
                 return ResourceManager.GetString("Save_Animal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Riz;15,00
-        ///Sushi;35,00
-        ///Bonbons;10,00
-        ///Shampooing;18,50
-        ///Brosse;12,00
-        ///Papillon bleu;500,00
-        ///Ruban rose;500.00.
-        /// </summary>
-        internal static string Store_Data {
-            get {
-                return ResourceManager.GetString("Store_Data", resourceCulture);
             }
         }
     }

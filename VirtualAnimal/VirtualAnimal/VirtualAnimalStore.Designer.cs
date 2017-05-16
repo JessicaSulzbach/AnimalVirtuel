@@ -34,8 +34,6 @@
             this.lblWallet = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.tlpStore = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tlpStore.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBuyAndBack
@@ -47,6 +45,7 @@
             this.btnBuyAndBack.TabIndex = 0;
             this.btnBuyAndBack.Text = "Acheter et rentrer";
             this.btnBuyAndBack.UseVisualStyleBackColor = true;
+            this.btnBuyAndBack.Click += new System.EventHandler(this.btnBuyAndBack_Click);
             // 
             // bntBack
             // 
@@ -92,13 +91,15 @@
             // 
             // tlpStore
             // 
-            this.tlpStore.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tlpStore.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpStore.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tlpStore.ColumnCount = 3;
             this.tlpStore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.66667F));
             this.tlpStore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.66666F));
             this.tlpStore.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tlpStore.Controls.Add(this.label3, 0, 0);
+            this.tlpStore.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpStore.Location = new System.Drawing.Point(12, 12);
             this.tlpStore.Name = "tlpStore";
             this.tlpStore.RowCount = 8;
@@ -112,16 +113,6 @@
             this.tlpStore.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpStore.Size = new System.Drawing.Size(297, 275);
             this.tlpStore.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 2);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 18);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Produits";
             // 
             // VirtualAnimalStore
             // 
@@ -141,8 +132,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = " Magasin";
             this.Load += new System.EventHandler(this.VirtualAnimalStore_Load);
-            this.tlpStore.ResumeLayout(false);
-            this.tlpStore.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,6 +145,5 @@
         private System.Windows.Forms.Label lblWallet;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.TableLayoutPanel tlpStore;
-        private System.Windows.Forms.Label label3;
     }
 }

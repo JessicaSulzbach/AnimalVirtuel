@@ -12,7 +12,7 @@ namespace VirtualAnimal
         // Variables
         private bool _firstTime;
         private Dictionary<string, int> _dataToRecover_Animal;
-        private List<string> _dataToRecover_Store;
+        private List<string> _seperateData;
 
         // Properties
         public Dictionary<string, int> DataToRecover_Animal
@@ -25,18 +25,18 @@ namespace VirtualAnimal
             get { return _firstTime; }
             set { _firstTime = value; }
         }
-        public List<string> DataToRecover_Store
+        public List<string> SeperateData
         {
-            get { return _dataToRecover_Store; }
-            set { _dataToRecover_Store = value; }
+            get { return _seperateData; }
+            set { _seperateData = value; }
         }
 
         public DataRecovery()
         {
             FirstTime = true;
             DataToRecover_Animal = new Dictionary<string, int>();
-            DataToRecover_Store =  new List<string>();
-        }
+            SeperateData =  new List<string>();
+        } 
 
         public void FileWritter(string FileName, string DataToSave)
         {
@@ -82,12 +82,21 @@ namespace VirtualAnimal
                 DataToRecover_Animal.Add("Hygene", Convert.ToInt32(Data[3]));
             }
 
-            if (FileName == "Store_Data.txt")
+            if (FileName == "Product_name_and_price.txt")
             {
+                List<string> DataToRecover_Products = new List<string>();
+
                 while ((LineBeingRead = Read.ReadLine()) != null)
                 {
-                    DataToRecover_Store.Add(LineBeingRead); 
+                    DataToRecover_Products.Add(LineBeingRead); 
                 }
+
+                foreach (var item in DataToRecover_Products)
+                {
+                    SeperateData.AddRange(item.Split(';').ToList());
+                }
+
+                Read.Close();
             }
         }
     }
