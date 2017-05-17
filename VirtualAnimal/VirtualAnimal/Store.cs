@@ -9,12 +9,12 @@ namespace VirtualAnimal
     class Store
     {
         private DataRecovery _saveOrRecover;
-        private Dictionary<string, double> _DataStore;
+        private Dictionary<string, double> _dataStore;
 
         public Dictionary<string, double> DataStore
         {
-            get { return _DataStore; }
-            set { _DataStore = value; }
+            get { return _dataStore; }
+            set { _dataStore = value; }
         }
 
         public DataRecovery SaveOrRecover
@@ -41,13 +41,18 @@ namespace VirtualAnimal
                 for (int y = 1; y < SaveOrRecover.SeperateData.Count; y = y + 3)
                 {
                     DataStore.Add(SaveOrRecover.SeperateData[i], Convert.ToDouble(SaveOrRecover.SeperateData[y]));
-                    i = i + 3;
+                    if (i < SaveOrRecover.SeperateData.Count - 3)
+                    {
+                        i = i + 3;
+                    }
                 }
             }
         }
 
         public void Sell(List<int> NewQuantity)
         {
+            SaveOrRecover.FirstTime = true;
+
             List<int> OldQuantity = new List<int>();
             for (int i = 2; i < SaveOrRecover.SeperateData.Count; i = i + 3)
             {
@@ -58,16 +63,19 @@ namespace VirtualAnimal
                 NewQuantity[i] = NewQuantity[i] + OldQuantity[i];
             }
 
-            for (int i = 0; i <= SaveOrRecover.SeperateData.Count - 2; i++)
+            for (int i = 0; i < SaveOrRecover.SeperateData.Count - 2; i++)
             {
-                for (int y = 1; y <= SaveOrRecover.SeperateData.Count - 1; y++)
+                for (int y = 1; y < SaveOrRecover.SeperateData.Count - 1; y++)
                 {
-                    for (int j = 0; j <= NewQuantity.Count- 1; j++)
+                    for (int j = 0; j <= NewQuantity.Count - 1; j++)
                     {
                         string FinalLineToSave = string.Format("{0};{1};{2}", SaveOrRecover.SeperateData[i], SaveOrRecover.SeperateData[y], NewQuantity[j]);
                         SaveOrRecover.FileWritter("Product_name_and_price.txt", FinalLineToSave);
-                        i = i + 3;
-                        y = y + 3;
+                        if (i < SaveOrRecover.SeperateData.Count - 3)
+                        {
+                            i = i + 3;
+                            y = y + 3;
+                        }
                     }
                 }
             }

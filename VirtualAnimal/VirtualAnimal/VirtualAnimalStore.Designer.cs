@@ -34,6 +34,7 @@
             this.lblWallet = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.tlpStore = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
             // btnBuyAndBack
@@ -114,11 +115,25 @@
             this.tlpStore.Size = new System.Drawing.Size(297, 275);
             this.tlpStore.TabIndex = 5;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(36, 8);
+            this.tableLayoutPanel1.TabIndex = 6;
+            // 
             // VirtualAnimalStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 299);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tlpStore);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.lblWallet);
@@ -145,5 +160,6 @@
         private System.Windows.Forms.Label lblWallet;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.TableLayoutPanel tlpStore;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

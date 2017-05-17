@@ -35,13 +35,12 @@ namespace VirtualAnimal
         {
             FirstTime = true;
             DataToRecover_Animal = new Dictionary<string, int>();
-            SeperateData =  new List<string>();
-        } 
+            SeperateData = new List<string>();
+        }
 
         public void FileWritter(string FileName, string DataToSave)
         {
             StreamWriter Write;
-
             if (FirstTime == true)
             {
                 Write = new StreamWriter(@"..\\..\\Resources\" + FileName, false);
@@ -88,7 +87,7 @@ namespace VirtualAnimal
 
                 while ((LineBeingRead = Read.ReadLine()) != null)
                 {
-                    DataToRecover_Products.Add(LineBeingRead); 
+                    DataToRecover_Products.Add(LineBeingRead);
                 }
 
                 foreach (var item in DataToRecover_Products)

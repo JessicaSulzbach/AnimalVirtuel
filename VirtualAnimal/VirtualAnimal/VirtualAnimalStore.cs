@@ -13,7 +13,7 @@ namespace VirtualAnimal
     public partial class VirtualAnimalStore : Form
     {
         private Store _theStore;
-
+        public const int NUMBER_OF_PRODUCTS = 7;
         internal Store TheStore
         {
             get { return _theStore; }
@@ -28,6 +28,13 @@ namespace VirtualAnimal
 
         private void VirtualAnimalStore_Load(object sender, EventArgs e)
         {
+            UpdateView();
+        }
+
+        private void UpdateView()
+        {
+            tlpStore.Controls.Clear();
+
             int Column = 1;
 
             tlpStore.Controls.Add(new Label() { Text = "Produits", Anchor = AnchorStyles.None, AutoSize = true, Font = new Font("Verdana", 12, FontStyle.Bold) }, 0, 0);
@@ -55,19 +62,25 @@ namespace VirtualAnimal
         public void Buy()
         {
             List<int> QntyList = new List<int>();
-            int[] t = new int[7];
-            for (int i = 0; i < 7; i++)
+            int[] t = new int[NUMBER_OF_PRODUCTS];
+            int numberOfZero = 0;
+            for (int i = 0; i < NUMBER_OF_PRODUCTS; i++)
             {
                 if (tlpStore.Controls["tbxQnty" + (i + 1)].Text == "")
                 {
                     t[i] = 0;
+                    numberOfZero++;
                 }
                 else
                 {
                     t[i] = Convert.ToInt32(((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).Text);
                 }
-                QntyList.Add(t[i]);
-                ((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).Text = "";
+                if (numberOfZero < NUMBER_OF_PRODUCTS)
+                {
+                    QntyList.Add(t[i]);
+                    ((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).Text = "";
+                }
+
             }
 
             this.TheStore.Sell(QntyList);
