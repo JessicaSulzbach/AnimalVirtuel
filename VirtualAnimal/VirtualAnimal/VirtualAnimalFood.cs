@@ -14,16 +14,16 @@ namespace VirtualAnimal
     {
         private Inventory _theInventory;
 
-        internal Inventory TheInventory
+        public Inventory TheInventory
         {
             get { return _theInventory; }
             set { _theInventory = value; }
         }
 
-        public VirtualAnimalFood()
+        public VirtualAnimalFood(Inventory i)
         {
             InitializeComponent();
-            TheInventory = new Inventory();
+            TheInventory = i;
 
             TheInventory.InventoryData();
             TheInventory.InventoryData("Food");
@@ -74,11 +74,11 @@ namespace VirtualAnimal
 
                     if (myKey == "Riz" || myKey == "Sushi")
                     {
-                        TheInventory.Use("Meal");
+                        TheInventory.Use("Eat");
                     }
                     else
                     {
-                        TheInventory.Use("Snack");
+                        TheInventory.Use("Happy");
                     }
                 }
             }

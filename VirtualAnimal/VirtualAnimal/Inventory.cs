@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace VirtualAnimal
 {
-    class Inventory
+    public class Inventory
     {
         private DataRecovery _saveOrRecover;
         private Animal _TheAnimal;
         private Dictionary<string, int> _dataInventoryHALF;
         private Dictionary<string, int> _dataInventoryFULL;
+        private string _product;
 
         public const int LAST_OF_FOODS = 8;
 
-        internal Animal TheAnimal
+        public Animal TheAnimal
         {
             get { return _TheAnimal; }
             set { _TheAnimal = value; }
@@ -38,6 +39,8 @@ namespace VirtualAnimal
             get { return _saveOrRecover; }
             set { _saveOrRecover = value; }
         }
+
+        public string Product { get => _product; set => _product = value; }
 
         public Inventory()
         {
@@ -98,43 +101,9 @@ namespace VirtualAnimal
             }
         }
 
-        public void Use(string Product)
+        public void Use(string ProductName)
         {
-            switch (Product)
-            {
-                case "Meal":
-                    {
-                        //TheAnimal.Health = TheAnimal.Health + 2;
-                        TheAnimal.Animations("Eat");
-                        break;
-                    }
-                case "Snack":
-                    {
-                        TheAnimal.Happiness = TheAnimal.Happiness + 2;
-                        TheAnimal.Animations("Eat");
-                        break;
-                    }
-                case "Shower":
-                    {
-                        TheAnimal.Animations("Shower");
-                        break;
-                    }
-                case "Brush":
-                    {
-                        TheAnimal.Animations("Brush");
-                        break;
-                    }
-                case "Blue":
-                    {
-                        
-                        break;
-                    }
-                case "Pink":
-                    {
-                        
-                        break;
-                    }
-            }
+            Product = ProductName;
         }
 
         public void Rewrite()

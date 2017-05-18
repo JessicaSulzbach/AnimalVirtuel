@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VirtualAnimal
 {
-    class DataRecovery
+    public class DataRecovery
     {
         // Variables
         private bool _firstTime;

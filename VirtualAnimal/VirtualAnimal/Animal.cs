@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VirtualAnimal
 {
-    class Animal
+    public class Animal
     {
         //Variables
         private int _hygene;
@@ -96,7 +96,7 @@ namespace VirtualAnimal
                     }
                 case "Eat":
                     {
-                        this.Happiness = this.Happiness + 2;
+                        this.Health = this.Health + 2;
                         break;
                     }
                 case "Sad": 

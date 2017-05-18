@@ -13,9 +13,10 @@ namespace VirtualAnimal
 {
     public partial class VirtualAnimalView : Form
     {
-        
+
         private Animal _theAnimal;
         private DataRecovery _saveOrRecover;
+        private Inventory _theInventory;
 
         internal DataRecovery SaveOrRecover
         {
@@ -28,6 +29,11 @@ namespace VirtualAnimal
             set { _theAnimal = value; }
         }
 
+        internal Inventory TheInventory
+        {
+            get { return _theInventory; }
+            set { _theInventory = value; }
+        }
 
         public VirtualAnimalView()
         {
@@ -35,6 +41,7 @@ namespace VirtualAnimal
 
             TheAnimal = new Animal();
             SaveOrRecover = new DataRecovery();
+            TheInventory = new Inventory();
 
         }
 
@@ -110,12 +117,10 @@ namespace VirtualAnimal
 
         private void tsmFood_Click(object sender, EventArgs e)
         {
-            VirtualAnimalFood food = new VirtualAnimalFood();
-            if(food.ShowDialog() == DialogResult.OK)
-            { 
-
-            }
-
+            VirtualAnimalFood food = new VirtualAnimalFood(TheInventory);
+            food.ShowDialog(this);
+            TheAnimal.Animations(TheInventory.Product);
+            UpdateProgressBar();
         }
 
         private void tsmMaterials_Click(object sender, EventArgs e)
