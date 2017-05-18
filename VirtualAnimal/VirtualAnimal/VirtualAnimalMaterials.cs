@@ -12,7 +12,7 @@ namespace VirtualAnimal
 {
     public partial class VirtualAnimalMaterials : Form
     {
-        Inventory _theInventory;
+        private Inventory _theInventory;
 
         internal Inventory TheInventory
         {
@@ -46,7 +46,7 @@ namespace VirtualAnimal
             foreach (var pair in TheInventory.DataInventoryHALF)
             {
                 tlpMaterials.Controls.Add(new RadioButton() { Name = "rdbMaterial" + Line, Text = pair.Key, Anchor = AnchorStyles.Left, AutoSize = true, Font = new Font("Verdana", 11, FontStyle.Regular) }, 0, Line);
-                tlpMaterials.Controls.Add(new Label() { Text = string.Format("{0}", pair.Value), Anchor = AnchorStyles.None, AutoSize = true, Font = new Font("Verdana", 11, FontStyle.Regular) }, 1, Line);
+                tlpMaterials.Controls.Add(new Label() { Name = "lblMaterial", Text = string.Format("{0}", pair.Value), Anchor = AnchorStyles.None, AutoSize = true, Font = new Font("Verdana", 11, FontStyle.Regular) }, 1, Line);
                 Line++;
             }
         }
@@ -58,10 +58,27 @@ namespace VirtualAnimal
 
         private void btnMaterialsUse_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < TheInventory.DataInventoryHALF.Count / 2; i++)
+            for (int i = 1; i <= TheInventory.DataInventoryHALF.Count; i++)
             {
-                if (((RadioButton)tlpMaterials.Controls["rdbMaterial" + (i + 1)]).Checked)
+                if (((RadioButton)tlpMaterials.Controls["rdbMaterial" + (i)]).Checked)
                 {
+                    string myKey = ((RadioButton)tlpMaterials.Controls["rdbMaterial" + (i)]).Text;
+                    int myValue = Convert.ToInt32(((Label)tlpMaterials.Controls["lblMaterial" + (i)]).Text);
+
+                    if (TheInventory.DataInventoryHALF.ContainsKey(((RadioButton)tlpMaterials.Controls["rdbMaterial" + (i)]).Text))
+                    {
+                        TheInventory.DataInventoryFULL[myKey] = 0;
+                        TheInventory.DataInventoryHALF[myKey] = 0;
+                    }
+
+                    if (myKey == "Riz" || myKey == "Sushi")
+                    {
+                        TheInventory.Use("Meal");
+                    }
+                    else
+                    {
+                        TheInventory.Use("Snack");
+                    }
 
                 }
             }
@@ -70,7 +87,7 @@ namespace VirtualAnimal
 
         private void btnMaterialsSell_Click(object sender, EventArgs e)
         {
-            for (int i = 1; i < TheInventory.DataInventoryHALF.Count; i++)
+            for (int i = 1; i <= TheInventory.DataInventoryHALF.Count; i++)
             {
                 if (((RadioButton)tlpMaterials.Controls["rdbMaterial" + (i)]).Checked)
                 {
@@ -81,8 +98,9 @@ namespace VirtualAnimal
                         TheInventory.DataInventoryFULL[myKey] = 0;
                         TheInventory.DataInventoryHALF[myKey] = 0;
                     }
+                    TheInventory.Rewrite();
                 }
-                TheInventory.Return();
+                
             }
             UpdateView();
         }

@@ -16,6 +16,7 @@ namespace VirtualAnimal
         private double _money;
         private DataRecovery _saveOrRecover;
 
+        
         // Properties 
         public int Hygene
         {
@@ -73,35 +74,70 @@ namespace VirtualAnimal
              SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(SavePrbHappyiness));
         }
 
-        public void Animations(int nbAnimation)
+        public void Animations(string Animation)
         {
-            switch(nbAnimation)
+            switch(Animation)
             {
-                case 0:
+                case "Idle":
                     {
                         break;
                     }
-                case 1:
+                case "Walk":
+                    {
+                        this.Happiness = this.Happiness + 3;
+                        this.Energy = this.Energy - 3;
+                        this.Hygene = this.Hygene - 3;
+                        break;
+                    }
+                case "Happy":
+                    {
+                        this.Happiness = this.Happiness + 1;
+                        break;
+                    }
+                case "Eat":
+                    {
+                        this.Happiness = this.Happiness + 2;
+                        break;
+                    }
+                case "Sad": 
                     {
                         break;
                     }
-                case 2:
+                case "Dead":
                     {
                         break;
                     }
-                case 3: 
+                case "Shower":
+                    {
+                        this.Hygene = this.Hygene + 2;
+                        break;
+                    }
+                case "Brush":
+                    {
+                        this.Hygene = this.Hygene + 1;
+                        break;
+                    }
+                case "Sleep":
+                    {
+                        this.Energy = 100;
+                        break;
+                    }
+                case "Nap":
+                    {
+                        this.Energy = this.Energy + 2;
+                        break;
+                    }
+                case "House_Backgroud":
                     {
                         break;
                     }
-                case 4:
-                    {
-                        break;
-                    }
-                case 5:
+                case "Street_Backgroud":
                     {
                         break;
                     }
             }
+            
         }
+
     }
 }

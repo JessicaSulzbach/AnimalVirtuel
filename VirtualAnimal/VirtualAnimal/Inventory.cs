@@ -9,11 +9,17 @@ namespace VirtualAnimal
     class Inventory
     {
         private DataRecovery _saveOrRecover;
+        private Animal _TheAnimal;
         private Dictionary<string, int> _dataInventoryHALF;
         private Dictionary<string, int> _dataInventoryFULL;
 
         public const int LAST_OF_FOODS = 8;
 
+        internal Animal TheAnimal
+        {
+            get { return _TheAnimal; }
+            set { _TheAnimal = value; }
+        }
         public Dictionary<string, int> DataInventoryFULL
         {
             get { return _dataInventoryFULL; }
@@ -36,6 +42,7 @@ namespace VirtualAnimal
         public Inventory()
         {
             SaveOrRecover = new DataRecovery();
+            TheAnimal = new Animal();
             DataInventoryHALF = new Dictionary<string, int>();
             DataInventoryFULL = new Dictionary<string, int>();
 
@@ -91,12 +98,46 @@ namespace VirtualAnimal
             }
         }
 
-        public void Use()
+        public void Use(string Product)
         {
-
+            switch (Product)
+            {
+                case "Meal":
+                    {
+                        //TheAnimal.Health = TheAnimal.Health + 2;
+                        TheAnimal.Animations("Eat");
+                        break;
+                    }
+                case "Snack":
+                    {
+                        TheAnimal.Happiness = TheAnimal.Happiness + 2;
+                        TheAnimal.Animations("Eat");
+                        break;
+                    }
+                case "Shower":
+                    {
+                        TheAnimal.Animations("Shower");
+                        break;
+                    }
+                case "Brush":
+                    {
+                        TheAnimal.Animations("Brush");
+                        break;
+                    }
+                case "Blue":
+                    {
+                        
+                        break;
+                    }
+                case "Pink":
+                    {
+                        
+                        break;
+                    }
+            }
         }
 
-        public void Return()
+        public void Rewrite()
         {
             SaveOrRecover.FirstTime = true;
 

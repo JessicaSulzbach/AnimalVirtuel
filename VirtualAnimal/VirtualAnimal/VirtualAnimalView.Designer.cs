@@ -195,6 +195,7 @@
             this.tsmPet.Name = "tsmPet";
             this.tsmPet.Size = new System.Drawing.Size(147, 22);
             this.tsmPet.Text = "Caresser";
+            this.tsmPet.Click += new System.EventHandler(this.tsmPet_Click);
             // 
             // tsmSleep
             // 

@@ -13,7 +13,7 @@ namespace VirtualAnimal
     public partial class VirtualAnimalStore : Form
     {
         private Store _theStore;
-        public const int NUMBER_OF_PRODUCTS = 7;
+        private const int NUMBER_OF_PRODUCTS = 7;
         internal Store TheStore
         {
             get { return _theStore; }
@@ -63,23 +63,19 @@ namespace VirtualAnimal
         {
             List<int> QntyList = new List<int>();
             int[] t = new int[NUMBER_OF_PRODUCTS];
-            int numberOfZero = 0;
             for (int i = 0; i < NUMBER_OF_PRODUCTS; i++)
             {
                 if (tlpStore.Controls["tbxQnty" + (i + 1)].Text == "")
                 {
                     t[i] = 0;
-                    numberOfZero++;
                 }
                 else
                 {
                     t[i] = Convert.ToInt32(((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).Text);
                 }
-                if (numberOfZero < NUMBER_OF_PRODUCTS)
-                {
-                    QntyList.Add(t[i]);
-                    ((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).Text = "";
-                }
+
+                QntyList.Add(t[i]);
+                ((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).Text = "";
 
             }
 
@@ -93,6 +89,7 @@ namespace VirtualAnimal
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
+
             this.Buy();
         }
 

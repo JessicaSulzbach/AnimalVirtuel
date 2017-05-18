@@ -76,9 +76,9 @@ namespace VirtualAnimal
                 Read.Close();
 
                 DataToRecover_Animal.Add("Health", Convert.ToInt32(Data[0]));
-                DataToRecover_Animal.Add("Energy", Convert.ToInt32(Data[1]));
-                DataToRecover_Animal.Add("Happiness", Convert.ToInt32(Data[2]));
-                DataToRecover_Animal.Add("Hygene", Convert.ToInt32(Data[3]));
+                DataToRecover_Animal.Add("Hygene", Convert.ToInt32(Data[1]));
+                DataToRecover_Animal.Add("Energy", Convert.ToInt32(Data[2]));
+                DataToRecover_Animal.Add("Happiness", Convert.ToInt32(Data[3]));
             }
 
             if (FileName == "Product_name_and_price.txt")

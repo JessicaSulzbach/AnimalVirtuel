@@ -49,10 +49,7 @@ namespace VirtualAnimal
         private void ProgressBarInitialize()
         {
             // Iniciates the value of the progress bar 
-            prbEnergy.Value = TheAnimal.Energy;
-            prbHealth.Value = TheAnimal.Health;
-            prbHygene.Value = TheAnimal.Hygene;
-            prbHappiness.Value = TheAnimal.Happiness;
+            UpdateProgressBar();
 
             tmrProgressBar.Enabled = true;
             tmrProgressBar.Start();
@@ -61,22 +58,25 @@ namespace VirtualAnimal
 
         private void tmrProgressBar_Tick(object sender, EventArgs e)
         {
-            if (prbHealth.Value != 0)
+            if (TheAnimal.Health != 0)
             {
-                prbHealth.Value--;
+                TheAnimal.Health--;
             }
-            if (prbEnergy.Value != 0)
+            if (TheAnimal.Hygene != 0)
             {
-                prbEnergy.Value--;
+                TheAnimal.Hygene--;
             }
-            if (prbHygene.Value != 0)
+
+            if (TheAnimal.Energy != 0)
             {
-                prbHygene.Value--;
+                TheAnimal.Energy--;
             }
-            if (prbHappiness.Value != 0)
+            if (TheAnimal.Happiness != 0)
             {
-                prbHappiness.Value--;
+                TheAnimal.Happiness--;
             }
+
+            UpdateProgressBar();
         }
 
         #endregion
@@ -111,7 +111,11 @@ namespace VirtualAnimal
         private void tsmFood_Click(object sender, EventArgs e)
         {
             VirtualAnimalFood food = new VirtualAnimalFood();
-            food.ShowDialog(this);
+            if(food.ShowDialog() == DialogResult.OK)
+            { 
+
+            }
+
         }
 
         private void tsmMaterials_Click(object sender, EventArgs e)
@@ -122,17 +126,47 @@ namespace VirtualAnimal
 
         #endregion
 
+        private void UpdateProgressBar()
+        {
+            prbEnergy.Value = TheAnimal.Energy;
+
+            prbHappiness.Value = TheAnimal.Happiness;
+
+            prbHealth.Value = TheAnimal.Health;
+
+            prbHygene.Value = TheAnimal.Hygene;
+        }
 
         private void VirtualAnimalView_FormClosing(object sender, FormClosingEventArgs e)
         {
-            int SavePrbHeath = prbHealth.Value;
-            int SavePrbHappiness = prbHappiness.Value;
-            int SavePrbHygene = prbHygene.Value;
-            int SavePrbEnergy = prbEnergy.Value;
-
             tmrProgressBar.Enabled = false;
 
-            this.TheAnimal.Animal_Save(SavePrbHeath, SavePrbHappiness, SavePrbHygene, SavePrbEnergy);
+            this.TheAnimal.Animal_Save(TheAnimal.Health, TheAnimal.Hygene, TheAnimal.Energy, TheAnimal.Happiness);
+        }
+
+        private void tsmPet_Click(object sender, EventArgs e)
+        {
+            TheAnimal.Animations("Happy");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (TheAnimal.Happiness != 0)
+            {
+                TheAnimal.Happiness--;
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (TheAnimal.Energy != 0)
+            {
+                TheAnimal.Energy--;
+            }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
 
         }
     }
