@@ -36,6 +36,8 @@ namespace VirtualAnimal
 
         private void UpdateView()
         {
+            TheInventory.SaveOrRecover.FileReader("Product_name_and_price.txt");
+            TheInventory.InventoryData("Food");
             tlpFood.Controls.Clear();
 
             int Line = 1;
@@ -57,33 +59,41 @@ namespace VirtualAnimal
 
         private void btnFoodUse_Click(object sender, EventArgs e)
         {
-            for (int i = 1; i <= TheInventory.DataInventoryHALF.Count; i++)
+            string myKey;
+            int myValue;
+            for (int i = 1; i < TheInventory.DataInventoryHALF.Count; i++)
             {
                 if (((RadioButton)tlpFood.Controls["rdbFood" + (i)]).Checked)
                 {
-                    string myKey = ((RadioButton)tlpFood.Controls["rdbFood" + (i)]).Text;
-                    int myValue = Convert.ToInt32(((Label)tlpFood.Controls["lblFood" + (i)]).Text);
+                    myKey = ((RadioButton)tlpFood.Controls["rdbFood" + (i)]).Text;
+                    myValue = Convert.ToInt32(((Label)tlpFood.Controls["lblFood" + (i)]).Text);
 
-                    if (TheInventory.DataInventoryHALF.ContainsKey(((RadioButton)tlpFood.Controls["rdbFood" + (i)]).Text))
+                    TheInventory.DataInventoryFULL[myKey] = myValue - 1;
+                    TheInventory.DataInventoryHALF[myKey] = myValue - 1;
+
+                    if (myValue != 0)
                     {
-                        TheInventory.DataInventoryFULL[myKey] = myValue - 1;
-                        TheInventory.DataInventoryHALF[myKey] = myValue - 1;
-                    }
-
-                    TheInventory.Rewrite();
-
-                    if (myKey == "Riz" || myKey == "Sushi")
-                    {
-                        TheInventory.Use("Eat");
+                        TheInventory.Rewrite();
+                        if (myKey == "Riz" || myKey == "Sushi")
+                        {
+                            TheInventory.Use("Eat");
+                        }
+                        else
+                        {
+                            TheInventory.Use("Happy");
+                        }
                     }
                     else
                     {
-                        TheInventory.Use("Happy");
+                        MessageBox.Show("Oups... Vous n'avez plus de " + myKey + ", il faut aller en acheter au magasin.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                 }
             }
-            UpdateView();
+            this.Close();
         }
+
+
+
 
         private void btnFoodSell_Click(object sender, EventArgs e)
         {

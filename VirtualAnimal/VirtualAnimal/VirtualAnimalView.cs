@@ -125,7 +125,7 @@ namespace VirtualAnimal
 
         private void tsmMaterials_Click(object sender, EventArgs e)
         {
-            VirtualAnimalMaterials materials = new VirtualAnimalMaterials();
+            VirtualAnimalMaterials materials = new VirtualAnimalMaterials(TheInventory);
             materials.ShowDialog(this);
         }
 

@@ -34,7 +34,8 @@
             this.lblWallet = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.tlpStore = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblMoney = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBuyAndBack
@@ -115,25 +116,31 @@
             this.tlpStore.Size = new System.Drawing.Size(297, 275);
             this.tlpStore.TabIndex = 5;
             // 
-            // tableLayoutPanel1
+            // lblMoney
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 6);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(36, 8);
-            this.tableLayoutPanel1.TabIndex = 6;
+            this.lblMoney.AutoSize = true;
+            this.lblMoney.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMoney.Location = new System.Drawing.Point(469, 9);
+            this.lblMoney.Name = "lblMoney";
+            this.lblMoney.Size = new System.Drawing.Size(0, 18);
+            this.lblMoney.TabIndex = 7;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(425, 74);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(0, 18);
+            this.lblPrice.TabIndex = 8;
             // 
             // VirtualAnimalStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 299);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.lblMoney);
             this.Controls.Add(this.tlpStore);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.lblWallet);
@@ -160,6 +167,7 @@
         private System.Windows.Forms.Label lblWallet;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.TableLayoutPanel tlpStore;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblMoney;
+        private System.Windows.Forms.Label lblPrice;
     }
 }

@@ -20,14 +20,13 @@ namespace VirtualAnimal
             set { _theInventory = value; }
         }
 
-        public VirtualAnimalMaterials()
+        public VirtualAnimalMaterials(Inventory i)
         {
             InitializeComponent();
-            TheInventory = new Inventory();
+            TheInventory = i;
 
             TheInventory.InventoryData();
             TheInventory.InventoryData("Materials");
-
         }
 
         private void VirtualAnimalMaterials_Load(object sender, EventArgs e)
@@ -37,6 +36,8 @@ namespace VirtualAnimal
 
         private void UpdateView()
         {
+            TheInventory.SaveOrRecover.FileReader("Product_name_and_price.txt");
+            TheInventory.InventoryData("Materials");
             tlpMaterials.Controls.Clear();
 
             int Line = 1;
@@ -46,7 +47,7 @@ namespace VirtualAnimal
             foreach (var pair in TheInventory.DataInventoryHALF)
             {
                 tlpMaterials.Controls.Add(new RadioButton() { Name = "rdbMaterial" + Line, Text = pair.Key, Anchor = AnchorStyles.Left, AutoSize = true, Font = new Font("Verdana", 11, FontStyle.Regular) }, 0, Line);
-                tlpMaterials.Controls.Add(new Label() { Name = "lblMaterial", Text = string.Format("{0}", pair.Value), Anchor = AnchorStyles.None, AutoSize = true, Font = new Font("Verdana", 11, FontStyle.Regular) }, 1, Line);
+                tlpMaterials.Controls.Add(new Label() { Name = "lblMaterial" + Line, Text = string.Format("{0}", pair.Value), Anchor = AnchorStyles.None, AutoSize = true, Font = new Font("Verdana", 11, FontStyle.Regular) }, 1, Line);
                 Line++;
             }
         }
@@ -58,31 +59,37 @@ namespace VirtualAnimal
 
         private void btnMaterialsUse_Click(object sender, EventArgs e)
         {
-            for (int i = 1; i <= TheInventory.DataInventoryHALF.Count; i++)
+            string myKey;
+            int myValue;
+            for (int i = 1; i < TheInventory.DataInventoryHALF.Count; i++)
             {
                 if (((RadioButton)tlpMaterials.Controls["rdbMaterial" + (i)]).Checked)
                 {
-                    string myKey = ((RadioButton)tlpMaterials.Controls["rdbMaterial" + (i)]).Text;
-                    int myValue = Convert.ToInt32(((Label)tlpMaterials.Controls["lblMaterial" + (i)]).Text);
+                    myKey = ((RadioButton)tlpMaterials.Controls["rdbMaterial" + (i)]).Text;
+                    myValue = Convert.ToInt32(((Label)tlpMaterials.Controls["lblMaterial" + (i)]).Text);
 
-                    if (TheInventory.DataInventoryHALF.ContainsKey(((RadioButton)tlpMaterials.Controls["rdbMaterial" + (i)]).Text))
-                    {
-                        TheInventory.DataInventoryFULL[myKey] = 0;
-                        TheInventory.DataInventoryHALF[myKey] = 0;
-                    }
+                    TheInventory.DataInventoryFULL[myKey] = myValue - 1;
+                    TheInventory.DataInventoryHALF[myKey] = myValue - 1;
 
-                    if (myKey == "Riz" || myKey == "Sushi")
+                    if (myValue != 0)
                     {
-                        TheInventory.Use("Meal");
+                        TheInventory.Rewrite();
+                        if (myKey == "Shampooing")
+                        {
+                            TheInventory.Use("Shower");
+                        }
+                        else if(myKey == "Brosse")
+                        {
+                            TheInventory.Use("Brush");
+                        }
                     }
                     else
                     {
-                        TheInventory.Use("Snack");
+                        MessageBox.Show("Oups... Vous n'avez plus de " + myKey + ", il faut aller en acheter au magasin.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
-
                 }
             }
-
+            this.Close();
         }
 
         private void btnMaterialsSell_Click(object sender, EventArgs e)
@@ -100,7 +107,7 @@ namespace VirtualAnimal
                     }
                     TheInventory.Rewrite();
                 }
-                
+
             }
             UpdateView();
         }

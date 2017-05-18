@@ -64,6 +64,7 @@ namespace VirtualAnimal
             this.Hygene = SaveOrRecover.DataToRecover_Animal["Hygene"];
             this.Energy = SaveOrRecover.DataToRecover_Animal["Energy"];
             this.Happiness = SaveOrRecover.DataToRecover_Animal["Happiness"];
+            this.Money = SaveOrRecover.DataToRecover_Animal["Money"];
         }
 
         public void Animal_Save(int SavePrbHealth, int SavePrbHygene, int SavePrbEnergy, int SavePrbHappyiness)
@@ -97,10 +98,6 @@ namespace VirtualAnimal
                 case "Eat":
                     {
                         this.Health = this.Health + 2;
-                        break;
-                    }
-                case "Sad": 
-                    {
                         break;
                     }
                 case "Dead":

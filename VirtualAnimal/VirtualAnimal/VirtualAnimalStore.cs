@@ -52,6 +52,8 @@ namespace VirtualAnimal
             {
                 ((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).KeyPress += new KeyPressEventHandler(Filter);
             }
+
+            
         }
 
         public void Filter(object sender, KeyPressEventArgs e)

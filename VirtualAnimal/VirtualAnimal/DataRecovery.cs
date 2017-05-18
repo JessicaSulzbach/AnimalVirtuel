@@ -62,6 +62,7 @@ namespace VirtualAnimal
 
             Read = new StreamReader(@"..\\..\\Resources\" + FileName);
             List<string> Data = new List<string>();
+            SeperateData.Clear();
             string LineBeingRead;
 
             if (FileName == "Save_Animal.txt")
@@ -79,6 +80,7 @@ namespace VirtualAnimal
                 DataToRecover_Animal.Add("Hygene", Convert.ToInt32(Data[1]));
                 DataToRecover_Animal.Add("Energy", Convert.ToInt32(Data[2]));
                 DataToRecover_Animal.Add("Happiness", Convert.ToInt32(Data[3]));
+                DataToRecover_Animal.Add("Money", Convert.ToInt32(Data[4]));
             }
 
             if (FileName == "Product_name_and_price.txt")
