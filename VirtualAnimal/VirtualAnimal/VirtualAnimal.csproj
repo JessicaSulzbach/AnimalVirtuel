@@ -119,6 +119,23 @@
   <ItemGroup>
     <Content Include="Resources\Eat1.jpeg" />
     <Content Include="Resources\Eat2.jpeg" />
+    <None Include="Resources\Sleep_Nap10.jpeg" />
+    <None Include="Resources\Sleep_Nap09.jpeg" />
+    <None Include="Resources\Sleep_Nap08.jpeg" />
+    <None Include="Resources\Sleep_Nap07.jpeg" />
+    <None Include="Resources\Sleep_Nap06.jpeg" />
+    <None Include="Resources\Sleep_Nap05.jpeg" />
+    <None Include="Resources\Sleep_Nap04.jpeg" />
+    <None Include="Resources\Sleep_Nap03.jpeg" />
+    <None Include="Resources\Sleep_Nap02.jpeg" />
+    <None Include="Resources\Sleep_Nap01.jpeg" />
+    <None Include="Resources\Sleep_Nap0.jpeg" />
+    <None Include="Resources\Sleep_Nap16.jpeg" />
+    <None Include="Resources\Sleep_Nap15.jpeg" />
+    <None Include="Resources\Sleep_Nap14.jpeg" />
+    <None Include="Resources\Sleep_Nap13.jpeg" />
+    <None Include="Resources\Sleep_Nap12.jpeg" />
+    <None Include="Resources\Sleep_Nap11.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

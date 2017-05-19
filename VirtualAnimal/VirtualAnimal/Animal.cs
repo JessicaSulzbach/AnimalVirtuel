@@ -61,6 +61,7 @@ namespace VirtualAnimal
         public Animal()
         {
             SaveOrRecover = new DataRecovery();
+            Anim = new List<Image>();
             Animal_Recover();
         }
 
@@ -106,7 +107,8 @@ namespace VirtualAnimal
                 case "Eat":
                     {
                         this.Health = this.Health + 2;
-                        //this.Anim.Add(Properties.Resources)
+                        this.Anim.Add(Properties.Resources.Eat1);
+                        this.Anim.Add(Properties.Resources.Eat2);
                         break;
                     }
                 case "Dead":
@@ -125,6 +127,11 @@ namespace VirtualAnimal
                     }
                 case "Sleep":
                     {
+                        for (int i = 0; i <= 16; i++)
+                        {
+                            string ImageName = "Sleep_Nap" + i;
+                            this.Anim.Add((Image)Properties.Resources.ResourceManager.GetObject(ImageName, Properties.Resources.Culture));
+                        }
                         this.Energy = 100;
                         break;
                     }

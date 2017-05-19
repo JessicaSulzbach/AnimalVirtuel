@@ -14,10 +14,15 @@ namespace VirtualAnimal
     public partial class VirtualAnimalView : Form
     {
 
+        #region Variables
         private Animal _theAnimal;
         private DataRecovery _saveOrRecover;
         private Inventory _theInventory;
+        int time = 0;
+        int numImage = 0;
+        #endregion
 
+        #region Properties
         internal DataRecovery SaveOrRecover
         {
             get { return _saveOrRecover; }
@@ -34,7 +39,9 @@ namespace VirtualAnimal
             get { return _theInventory; }
             set { _theInventory = value; }
         }
+        #endregion
 
+        #region Constructor
         public VirtualAnimalView()
         {
             InitializeComponent();
@@ -42,8 +49,8 @@ namespace VirtualAnimal
             TheAnimal = new Animal();
             SaveOrRecover = new DataRecovery();
             TheInventory = new Inventory();
-
         }
+        #endregion
 
         private void VirtualAnimalView_Load(object sender, EventArgs e)
         {
@@ -52,7 +59,6 @@ namespace VirtualAnimal
         }
 
         #region ProgressBar
-
         private void ProgressBarInitialize()
         {
             // Iniciates the value of the progress bar 
@@ -84,6 +90,17 @@ namespace VirtualAnimal
             }
 
             UpdateProgressBar();
+        }
+
+        private void UpdateProgressBar()
+        {
+            prbEnergy.Value = TheAnimal.Energy;
+
+            prbHappiness.Value = TheAnimal.Happiness;
+
+            prbHealth.Value = TheAnimal.Health;
+
+            prbHygene.Value = TheAnimal.Hygene;
         }
 
         #endregion
@@ -121,6 +138,7 @@ namespace VirtualAnimal
             food.ShowDialog(this);
             TheAnimal.Animations(TheInventory.Product);
             UpdateProgressBar();
+            AnimationsInitialize();
         }
 
         private void tsmMaterials_Click(object sender, EventArgs e)
@@ -131,49 +149,21 @@ namespace VirtualAnimal
 
         #endregion
 
-        private void UpdateProgressBar()
+        #region Animations
+        private void AnimationsInitialize()
         {
-            prbEnergy.Value = TheAnimal.Energy;
-
-            prbHappiness.Value = TheAnimal.Happiness;
-
-            prbHealth.Value = TheAnimal.Health;
-
-            prbHygene.Value = TheAnimal.Hygene;
+            tmrAnimalAnimations.Enabled = true;
+            tmrAnimalAnimations.Start();
+            tmrAnimalAnimations.Interval = 500;
         }
-
-        private void VirtualAnimalView_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            tmrProgressBar.Enabled = false;
-
-            this.TheAnimal.Animal_Save(TheAnimal.Health, TheAnimal.Hygene, TheAnimal.Energy, TheAnimal.Happiness);
+        private void updateAnim(int numImage){
+            this.pbxAnimalAnimation.Image = TheAnimal.Anim[numImage];
         }
 
         private void tsmPet_Click(object sender, EventArgs e)
         {
             TheAnimal.Animations("Happy");
             UpdateProgressBar();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (TheAnimal.Happiness != 0)
-            {
-                TheAnimal.Happiness--;
-            }
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            if (TheAnimal.Energy != 0)
-            {
-                TheAnimal.Energy--;
-            }
-        }
-
-        private void timer3_Tick(object sender, EventArgs e)
-        {
-
         }
 
         private void tsmSleep_Click(object sender, EventArgs e)
@@ -186,6 +176,59 @@ namespace VirtualAnimal
         {
             TheAnimal.Animations("Nap");
             UpdateProgressBar();
+        }
+
+        private void tmrAnimalAnimations_Tick(object sender, EventArgs e)
+        {
+            if (TheInventory.Product == "Eat")
+            {
+                if (time <= 10)
+                {
+                    if (numImage == 0)
+                    {
+                        updateAnim(numImage);
+                        numImage = 1;
+                        time++;
+                    }
+                    else
+                    {
+                        updateAnim(numImage);
+                        numImage = 0;
+                        time++;
+                    }
+                }
+                else
+                {
+                    pbxAnimalAnimation.Image = null;
+                    tmrAnimalAnimations.Stop();
+                    time = 0;
+                }
+            }
+            else if (TheInventory.Product == "Sleep" || TheInventory.Product == "Nap")
+            {
+                if (time <= 16)
+                {
+                    for (int i = 0; i <= 16; i++)
+                    {
+                        updateAnim(i);
+                        time++;
+                    }
+                }
+                else
+                {
+                    pbxAnimalAnimation.Image = null;
+                    tmrAnimalAnimations.Stop();
+                    time = 0;
+                }
+            }
+        }
+        #endregion
+
+        private void VirtualAnimalView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            tmrProgressBar.Enabled = false;
+
+            this.TheAnimal.Animal_Save(TheAnimal.Health, TheAnimal.Hygene, TheAnimal.Energy, TheAnimal.Happiness);
         }
     }
 }

@@ -61,7 +61,27 @@ namespace VirtualAnimal.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Riz;15.00;98
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Eat1 {
+            get {
+                object obj = ResourceManager.GetObject("Eat1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Eat2 {
+            get {
+                object obj = ResourceManager.GetObject("Eat2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Riz;15.00;51
         ///Sushi;35.00;0
         ///Bonbons;10.00;0
         ///Shampooing;18.50;0
@@ -79,13 +99,183 @@ namespace VirtualAnimal.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à 0
         ///0
-        ///4
+        ///0
         ///0
         ///.
         /// </summary>
         internal static string Save_Animal {
             get {
                 return ResourceManager.GetString("Save_Animal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap0 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap01 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap02 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap03 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap04 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap04", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap05 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap05", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap06 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap06", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap07 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap07", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap08 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap08", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap09 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap09", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap10 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap11 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap12 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap13 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap14 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap15 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap15", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sleep_Nap16 {
+            get {
+                object obj = ResourceManager.GetObject("Sleep_Nap16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

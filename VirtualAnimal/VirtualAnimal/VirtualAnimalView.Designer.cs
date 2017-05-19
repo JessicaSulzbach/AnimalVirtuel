@@ -54,6 +54,7 @@
             this.bgwForProgressBar = new System.ComponentModel.BackgroundWorker();
             this.tmrProgressBar = new System.Windows.Forms.Timer(this.components);
             this.pbxAnimalAnimation = new System.Windows.Forms.PictureBox();
+            this.tmrAnimalAnimations = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.cmsForAnimalButton.SuspendLayout();
             this.cmsForInventoryButton.SuspendLayout();
@@ -267,8 +268,13 @@
             this.pbxAnimalAnimation.Location = new System.Drawing.Point(340, 191);
             this.pbxAnimalAnimation.Name = "pbxAnimalAnimation";
             this.pbxAnimalAnimation.Size = new System.Drawing.Size(122, 109);
+            this.pbxAnimalAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxAnimalAnimation.TabIndex = 5;
             this.pbxAnimalAnimation.TabStop = false;
+            // 
+            // tmrAnimalAnimations
+            // 
+            this.tmrAnimalAnimations.Tick += new System.EventHandler(this.tmrAnimalAnimations_Tick);
             // 
             // VirtualAnimalView
             // 
@@ -324,6 +330,7 @@
         private System.ComponentModel.BackgroundWorker bgwForProgressBar;
         private System.Windows.Forms.Timer tmrProgressBar;
         private System.Windows.Forms.PictureBox pbxAnimalAnimation;
+        private System.Windows.Forms.Timer tmrAnimalAnimations;
     }
 }
 
