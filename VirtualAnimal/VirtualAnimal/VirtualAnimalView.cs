@@ -18,8 +18,9 @@ namespace VirtualAnimal
         private Animal _theAnimal;
         private DataRecovery _saveOrRecover;
         private Inventory _theInventory;
-        int time = 0;
-        int numImage = 0;
+        private int time;
+        private int numImage;
+        private string animName;
         #endregion
 
         #region Properties
@@ -49,6 +50,10 @@ namespace VirtualAnimal
             TheAnimal = new Animal();
             SaveOrRecover = new DataRecovery();
             TheInventory = new Inventory();
+
+            time =0;
+            numImage = 0;
+            animName = "";
         }
         #endregion
 
@@ -149,17 +154,6 @@ namespace VirtualAnimal
 
         #endregion
 
-        #region Animations
-        private void AnimationsInitialize()
-        {
-            tmrAnimalAnimations.Enabled = true;
-            tmrAnimalAnimations.Start();
-            tmrAnimalAnimations.Interval = 500;
-        }
-        private void updateAnim(int numImage){
-            this.pbxAnimalAnimation.Image = TheAnimal.Anim[numImage];
-        }
-
         private void tsmPet_Click(object sender, EventArgs e)
         {
             TheAnimal.Animations("Happy");
@@ -168,14 +162,31 @@ namespace VirtualAnimal
 
         private void tsmSleep_Click(object sender, EventArgs e)
         {
-            TheAnimal.Animations("Sleep");
+            //time = 0;
+            //numImage = 0;
+            animName = "Sleep";
+            TheAnimal.Animations(animName);
             UpdateProgressBar();
+            AnimationsInitialize();
         }
 
         private void tsmNap_Click(object sender, EventArgs e)
         {
             TheAnimal.Animations("Nap");
             UpdateProgressBar();
+        }
+
+        #region Animations
+        private void AnimationsInitialize()
+        {
+            tmrAnimalAnimations.Enabled = true;
+            tmrAnimalAnimations.Start();
+            tmrAnimalAnimations.Interval = 500;
+        }
+
+        private void updateAnim(int numImage)
+        {
+            this.pbxAnimalAnimation.Image = TheAnimal.Anim[numImage];
         }
 
         private void tmrAnimalAnimations_Tick(object sender, EventArgs e)
@@ -204,14 +215,15 @@ namespace VirtualAnimal
                     time = 0;
                 }
             }
-            else if (TheInventory.Product == "Sleep" || TheInventory.Product == "Nap")
+            else if (animName == "Sleep" || animName == "Nap")
             {
                 if (time <= 16)
                 {
-                    for (int i = 0; i <= 16; i++)
+                    if(numImage!=17)
                     {
-                        updateAnim(i);
+                        updateAnim(numImage);
                         time++;
+                        numImage++;
                     }
                 }
                 else

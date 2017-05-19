@@ -1,4 +1,4 @@
-Riz;15.00;51
+Riz;15.00;49
 Sushi;35.00;0
 Bonbons;10.00;0
 Shampooing;18.50;0

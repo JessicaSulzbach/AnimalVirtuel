@@ -267,7 +267,7 @@
             // 
             this.pbxAnimalAnimation.Location = new System.Drawing.Point(340, 191);
             this.pbxAnimalAnimation.Name = "pbxAnimalAnimation";
-            this.pbxAnimalAnimation.Size = new System.Drawing.Size(122, 109);
+            this.pbxAnimalAnimation.Size = new System.Drawing.Size(100, 100);
             this.pbxAnimalAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxAnimalAnimation.TabIndex = 5;
             this.pbxAnimalAnimation.TabStop = false;
