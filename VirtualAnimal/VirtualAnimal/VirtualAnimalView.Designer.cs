@@ -53,10 +53,12 @@
             this.tsmWalk = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwForProgressBar = new System.ComponentModel.BackgroundWorker();
             this.tmrProgressBar = new System.Windows.Forms.Timer(this.components);
+            this.pbxAnimalAnimation = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.cmsForAnimalButton.SuspendLayout();
             this.cmsForInventoryButton.SuspendLayout();
             this.cmsForGoOutButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAnimalAnimation)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -260,11 +262,20 @@
             // 
             this.tmrProgressBar.Tick += new System.EventHandler(this.tmrProgressBar_Tick);
             // 
+            // pbxAnimalAnimation
+            // 
+            this.pbxAnimalAnimation.Location = new System.Drawing.Point(340, 191);
+            this.pbxAnimalAnimation.Name = "pbxAnimalAnimation";
+            this.pbxAnimalAnimation.Size = new System.Drawing.Size(122, 109);
+            this.pbxAnimalAnimation.TabIndex = 5;
+            this.pbxAnimalAnimation.TabStop = false;
+            // 
             // VirtualAnimalView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 363);
+            this.Controls.Add(this.pbxAnimalAnimation);
             this.Controls.Add(this.btnGoOut);
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.btnAnimal);
@@ -281,6 +292,7 @@
             this.cmsForAnimalButton.ResumeLayout(false);
             this.cmsForInventoryButton.ResumeLayout(false);
             this.cmsForGoOutButton.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAnimalAnimation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,6 +323,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmWalk;
         private System.ComponentModel.BackgroundWorker bgwForProgressBar;
         private System.Windows.Forms.Timer tmrProgressBar;
+        private System.Windows.Forms.PictureBox pbxAnimalAnimation;
     }
 }
 

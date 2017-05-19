@@ -117,8 +117,8 @@
     <None Include="Resources\Product_name_and_price.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Eat\Eat1.jpeg" />
-    <Content Include="Resources\Eat\Eat2.jpeg" />
+    <Content Include="Resources\Eat1.jpeg" />
+    <Content Include="Resources\Eat2.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

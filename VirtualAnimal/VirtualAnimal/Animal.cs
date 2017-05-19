@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,13 @@ namespace VirtualAnimal
         private int _happiness;
         private double _money;
         private DataRecovery _saveOrRecover;
+        private List<Image> _anim;
+
+        public List<Image> Anim
+        {
+            get { return _anim; }
+            set { _anim = value; }
+        }
 
         
         // Properties 
@@ -98,6 +106,7 @@ namespace VirtualAnimal
                 case "Eat":
                     {
                         this.Health = this.Health + 2;
+                        //this.Anim.Add(Properties.Resources)
                         break;
                     }
                 case "Dead":
