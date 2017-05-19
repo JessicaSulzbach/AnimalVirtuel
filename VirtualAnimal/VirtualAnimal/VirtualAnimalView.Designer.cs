@@ -202,12 +202,14 @@
             this.tsmSleep.Name = "tsmSleep";
             this.tsmSleep.Size = new System.Drawing.Size(147, 22);
             this.tsmSleep.Text = "Dormir";
+            this.tsmSleep.Click += new System.EventHandler(this.tsmSleep_Click);
             // 
             // tsmNap
             // 
             this.tsmNap.Name = "tsmNap";
             this.tsmNap.Size = new System.Drawing.Size(147, 22);
             this.tsmNap.Text = "Sieste";
+            this.tsmNap.Click += new System.EventHandler(this.tsmNap_Click);
             // 
             // cmsForInventoryButton
             // 

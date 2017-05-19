@@ -64,7 +64,7 @@ namespace VirtualAnimal
             this.Hygene = SaveOrRecover.DataToRecover_Animal["Hygene"];
             this.Energy = SaveOrRecover.DataToRecover_Animal["Energy"];
             this.Happiness = SaveOrRecover.DataToRecover_Animal["Happiness"];
-            this.Money = SaveOrRecover.DataToRecover_Animal["Money"];
+            //this.Money = SaveOrRecover.DataToRecover_Animal["Money"];
         }
 
         public void Animal_Save(int SavePrbHealth, int SavePrbHygene, int SavePrbEnergy, int SavePrbHappyiness)

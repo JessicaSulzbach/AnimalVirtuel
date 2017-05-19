@@ -14,6 +14,12 @@ namespace VirtualAnimal
         private Dictionary<string, int> _dataInventoryFULL;
         private string _product;
 
+        public string Product
+        {
+            get { return _product; }
+            set { _product = value; }
+        }
+
         public const int LAST_OF_FOODS = 8;
 
         public Animal TheAnimal
@@ -40,7 +46,7 @@ namespace VirtualAnimal
             set { _saveOrRecover = value; }
         }
 
-        public string Product { get => _product; set => _product = value; }
+        
 
         public Inventory()
         {

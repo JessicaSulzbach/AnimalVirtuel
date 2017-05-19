@@ -152,6 +152,7 @@ namespace VirtualAnimal
         private void tsmPet_Click(object sender, EventArgs e)
         {
             TheAnimal.Animations("Happy");
+            UpdateProgressBar();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -173,6 +174,18 @@ namespace VirtualAnimal
         private void timer3_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void tsmSleep_Click(object sender, EventArgs e)
+        {
+            TheAnimal.Animations("Sleep");
+            UpdateProgressBar();
+        }
+
+        private void tsmNap_Click(object sender, EventArgs e)
+        {
+            TheAnimal.Animations("Nap");
+            UpdateProgressBar();
         }
     }
 }

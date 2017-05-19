@@ -61,13 +61,14 @@ namespace VirtualAnimal.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Riz;15.00;0
+        ///   Recherche une chaîne localisée semblable à Riz;15.00;98
         ///Sushi;35.00;0
         ///Bonbons;10.00;0
         ///Shampooing;18.50;0
         ///Brosse;12.00;0
         ///Papillon bleu;500.00;0
-        ///Ruban rose;500.00;0.
+        ///Ruban rose;500.00;0
+        ///.
         /// </summary>
         internal static string Product_name_and_price {
             get {
@@ -78,7 +79,7 @@ namespace VirtualAnimal.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à 0
         ///0
-        ///0
+        ///4
         ///0
         ///.
         /// </summary>
