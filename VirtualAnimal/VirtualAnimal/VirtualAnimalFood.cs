@@ -61,18 +61,18 @@ namespace VirtualAnimal
         {
             string myKey;
             int myValue;
-            for (int i = 1; i < TheInventory.DataInventoryHALF.Count; i++)
+            for (int i = 1; i <= TheInventory.DataInventoryHALF.Count; i++)
             {
                 if (((RadioButton)tlpFood.Controls["rdbFood" + (i)]).Checked)
                 {
                     myKey = ((RadioButton)tlpFood.Controls["rdbFood" + (i)]).Text;
                     myValue = Convert.ToInt32(((Label)tlpFood.Controls["lblFood" + (i)]).Text);
 
-                    TheInventory.DataInventoryFULL[myKey] = myValue - 1;
-                    TheInventory.DataInventoryHALF[myKey] = myValue - 1;
-
-                    if (myValue != 0)
+                    if (myValue > 0)
                     {
+                        TheInventory.DataInventoryFULL[myKey] = myValue - 1;
+                        TheInventory.DataInventoryHALF[myKey] = myValue - 1;
+
                         TheInventory.Rewrite();
                         if (myKey == "Riz" || myKey == "Sushi")
                         {
@@ -82,6 +82,7 @@ namespace VirtualAnimal
                         {
                             TheInventory.Use("Happy");
                         }
+
                     }
                     else
                     {

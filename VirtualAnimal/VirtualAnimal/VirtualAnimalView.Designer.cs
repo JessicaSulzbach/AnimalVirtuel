@@ -53,8 +53,8 @@
             this.tsmWalk = new System.Windows.Forms.ToolStripMenuItem();
             this.bgwForProgressBar = new System.ComponentModel.BackgroundWorker();
             this.tmrProgressBar = new System.Windows.Forms.Timer(this.components);
-            this.pbxAnimalAnimation = new System.Windows.Forms.PictureBox();
             this.tmrAnimalAnimations = new System.Windows.Forms.Timer(this.components);
+            this.pbxAnimalAnimation = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.cmsForAnimalButton.SuspendLayout();
             this.cmsForInventoryButton.SuspendLayout();
@@ -153,7 +153,7 @@
             // btnAnimal
             // 
             this.btnAnimal.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnimal.Location = new System.Drawing.Point(39, 321);
+            this.btnAnimal.Location = new System.Drawing.Point(12, 315);
             this.btnAnimal.Name = "btnAnimal";
             this.btnAnimal.Size = new System.Drawing.Size(112, 30);
             this.btnAnimal.TabIndex = 1;
@@ -164,7 +164,7 @@
             // btnInventory
             // 
             this.btnInventory.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventory.Location = new System.Drawing.Point(271, 321);
+            this.btnInventory.Location = new System.Drawing.Point(234, 315);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(112, 30);
             this.btnInventory.TabIndex = 3;
@@ -175,7 +175,7 @@
             // btnGoOut
             // 
             this.btnGoOut.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGoOut.Location = new System.Drawing.Point(503, 321);
+            this.btnGoOut.Location = new System.Drawing.Point(456, 315);
             this.btnGoOut.Name = "btnGoOut";
             this.btnGoOut.Size = new System.Drawing.Size(112, 30);
             this.btnGoOut.TabIndex = 4;
@@ -244,7 +244,7 @@
             this.tsmStore,
             this.tsmWalk});
             this.cmsForGoOutButton.Name = "cmsForGoOutButton";
-            this.cmsForGoOutButton.Size = new System.Drawing.Size(168, 48);
+            this.cmsForGoOutButton.Size = new System.Drawing.Size(168, 70);
             // 
             // tsmStore
             // 
@@ -258,29 +258,30 @@
             this.tsmWalk.Name = "tsmWalk";
             this.tsmWalk.Size = new System.Drawing.Size(167, 22);
             this.tsmWalk.Text = "Promenade";
+            this.tsmWalk.Click += new System.EventHandler(this.tsmWalk_Click);
             // 
             // tmrProgressBar
             // 
             this.tmrProgressBar.Tick += new System.EventHandler(this.tmrProgressBar_Tick);
             // 
-            // pbxAnimalAnimation
-            // 
-            this.pbxAnimalAnimation.Location = new System.Drawing.Point(340, 191);
-            this.pbxAnimalAnimation.Name = "pbxAnimalAnimation";
-            this.pbxAnimalAnimation.Size = new System.Drawing.Size(100, 100);
-            this.pbxAnimalAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxAnimalAnimation.TabIndex = 5;
-            this.pbxAnimalAnimation.TabStop = false;
-            // 
             // tmrAnimalAnimations
             // 
             this.tmrAnimalAnimations.Tick += new System.EventHandler(this.tmrAnimalAnimations_Tick);
+            // 
+            // pbxAnimalAnimation
+            // 
+            this.pbxAnimalAnimation.Location = new System.Drawing.Point(352, 214);
+            this.pbxAnimalAnimation.Name = "pbxAnimalAnimation";
+            this.pbxAnimalAnimation.Size = new System.Drawing.Size(100, 99);
+            this.pbxAnimalAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxAnimalAnimation.TabIndex = 8;
+            this.pbxAnimalAnimation.TabStop = false;
             // 
             // VirtualAnimalView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 363);
+            this.ClientSize = new System.Drawing.Size(580, 357);
             this.Controls.Add(this.pbxAnimalAnimation);
             this.Controls.Add(this.btnGoOut);
             this.Controls.Add(this.btnInventory);
@@ -293,6 +294,7 @@
             this.Text = "Animal virtuel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VirtualAnimalView_FormClosing);
             this.Load += new System.EventHandler(this.VirtualAnimalView_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.VirtualAnimalView_Paint);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.cmsForAnimalButton.ResumeLayout(false);
@@ -329,8 +331,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmWalk;
         private System.ComponentModel.BackgroundWorker bgwForProgressBar;
         private System.Windows.Forms.Timer tmrProgressBar;
-        private System.Windows.Forms.PictureBox pbxAnimalAnimation;
         private System.Windows.Forms.Timer tmrAnimalAnimations;
+        private System.Windows.Forms.PictureBox pbxAnimalAnimation;
     }
 }
 

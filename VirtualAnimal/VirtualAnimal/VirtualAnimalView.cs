@@ -19,8 +19,8 @@ namespace VirtualAnimal
         private DataRecovery _saveOrRecover;
         private Inventory _theInventory;
         private int time;
-        private int numImage;
         private string animName;
+        private Image background;
         #endregion
 
         #region Properties
@@ -40,6 +40,12 @@ namespace VirtualAnimal
             get { return _theInventory; }
             set { _theInventory = value; }
         }
+
+        public Image Background
+        {
+            get { return background; }
+            set { background = value; }
+        }
         #endregion
 
         #region Constructor
@@ -47,12 +53,17 @@ namespace VirtualAnimal
         {
             InitializeComponent();
 
+            DoubleBuffered = true;
+
+            pbxAnimalAnimation.BackColor = Color.Transparent;
+            Background = Properties.Resources.BackgroundHome;
+
             TheAnimal = new Animal();
             SaveOrRecover = new DataRecovery();
             TheInventory = new Inventory();
 
-            time =0;
-            numImage = 0;
+            time = 0;
+            TheAnimal.NumImage = 0;
             animName = "";
         }
         #endregion
@@ -61,6 +72,8 @@ namespace VirtualAnimal
         {
             // Initializes the necessary components 
             ProgressBarInitialize();
+            AnimationsInitialize();
+
         }
 
         #region ProgressBar
@@ -76,20 +89,20 @@ namespace VirtualAnimal
 
         private void tmrProgressBar_Tick(object sender, EventArgs e)
         {
-            if (TheAnimal.Health != 0)
+            if (TheAnimal.Health > 0)
             {
                 TheAnimal.Health--;
             }
-            if (TheAnimal.Hygene != 0)
+            if (TheAnimal.Hygene > 0)
             {
                 TheAnimal.Hygene--;
             }
 
-            if (TheAnimal.Energy != 0)
+            if (TheAnimal.Energy > 0)
             {
                 TheAnimal.Energy--;
             }
-            if (TheAnimal.Happiness != 0)
+            if (TheAnimal.Happiness > 0)
             {
                 TheAnimal.Happiness--;
             }
@@ -127,6 +140,38 @@ namespace VirtualAnimal
             cmsForGoOutButton.Show(btnGoOut, new Point(0, btnGoOut.Height));
         }
 
+        private void tsmPet_Click(object sender, EventArgs e)
+        {
+            TheAnimal.NumImage = 0;
+            animName = "Happy";
+            TheAnimal.Animations("Happy");
+            UpdateProgressBar();
+        }
+
+        private void tsmSleep_Click(object sender, EventArgs e)
+        {
+            TheAnimal.NumImage = 0;
+            animName = "Sleep";
+            TheAnimal.Animations(animName);
+            UpdateProgressBar();
+
+        }
+
+        private void tsmNap_Click(object sender, EventArgs e)
+        {
+            TheAnimal.NumImage = 0;
+            animName = "Sleep";
+            TheAnimal.Animations("Nap");
+            UpdateProgressBar();
+        }
+
+        private void tsmWalk_Click(object sender, EventArgs e)
+        {
+            TheAnimal.NumImage = 0;
+            animName = "Walk";
+            TheAnimal.Animations(animName);
+            UpdateProgressBar();
+        }
         #endregion
 
         #region OpenForms
@@ -150,38 +195,19 @@ namespace VirtualAnimal
         {
             VirtualAnimalMaterials materials = new VirtualAnimalMaterials(TheInventory);
             materials.ShowDialog(this);
-        }
-
-        #endregion
-
-        private void tsmPet_Click(object sender, EventArgs e)
-        {
-            TheAnimal.Animations("Happy");
-            UpdateProgressBar();
-        }
-
-        private void tsmSleep_Click(object sender, EventArgs e)
-        {
-            //time = 0;
-            //numImage = 0;
-            animName = "Sleep";
-            TheAnimal.Animations(animName);
+            TheAnimal.Animations(TheInventory.Product);
             UpdateProgressBar();
             AnimationsInitialize();
         }
 
-        private void tsmNap_Click(object sender, EventArgs e)
-        {
-            TheAnimal.Animations("Nap");
-            UpdateProgressBar();
-        }
+        #endregion
 
         #region Animations
         private void AnimationsInitialize()
         {
             tmrAnimalAnimations.Enabled = true;
             tmrAnimalAnimations.Start();
-            tmrAnimalAnimations.Interval = 500;
+            tmrAnimalAnimations.Interval = 150;
         }
 
         private void updateAnim(int numImage)
@@ -191,48 +217,160 @@ namespace VirtualAnimal
 
         private void tmrAnimalAnimations_Tick(object sender, EventArgs e)
         {
-            if (TheInventory.Product == "Eat")
+            if (animName == "Happy" || TheInventory.Product == "Happy")
             {
-                if (time <= 10)
+                if (time <= 8)
                 {
-                    if (numImage == 0)
+                    if (TheAnimal.NumImage <= 8)
                     {
-                        updateAnim(numImage);
-                        numImage = 1;
+                        updateAnim(TheAnimal.NumImage);
                         time++;
-                    }
-                    else
-                    {
-                        updateAnim(numImage);
-                        numImage = 0;
-                        time++;
+                        TheAnimal.NumImage++;
                     }
                 }
                 else
                 {
-                    pbxAnimalAnimation.Image = null;
-                    tmrAnimalAnimations.Stop();
                     time = 0;
+                    TheAnimal.Animations("Idle");
+                    animName = "Idle";
+                    TheInventory.Product = "Idle";
                 }
             }
             else if (animName == "Sleep" || animName == "Nap")
             {
-                if (time <= 16)
+                if (time <= 18)
                 {
-                    if(numImage!=17)
+                    if (TheAnimal.NumImage <= 18)
                     {
-                        updateAnim(numImage);
+                        updateAnim(TheAnimal.NumImage);
                         time++;
-                        numImage++;
+                        TheAnimal.NumImage++;
                     }
                 }
                 else
                 {
-                    pbxAnimalAnimation.Image = null;
-                    tmrAnimalAnimations.Stop();
                     time = 0;
+                    TheAnimal.Animations("Idle");
+                    animName = "Idle";
                 }
             }
+            else if (animName == "Walk")
+            {
+                if (time <= 20)
+                {
+                    if (TheAnimal.NumImage == 0)
+                    {
+                        TheAnimal.NumImage = 1;
+                        updateAnim(TheAnimal.NumImage);
+                        time++;
+                    }
+                    else
+                    {
+                        TheAnimal.NumImage = 0;
+                        updateAnim(TheAnimal.NumImage);
+                        time++;
+                    }
+                }
+                else
+                {
+                    time = 0;
+                    TheAnimal.Animations("Idle");
+                    animName = "Idle";
+                }
+            }
+            else if (TheInventory.Product == "Eat")
+            {
+                if (time <= 10)
+                {
+                    if (TheAnimal.NumImage == 0)
+                    {
+                        TheAnimal.NumImage = 1;
+                        updateAnim(TheAnimal.NumImage);
+                        time++;
+                    }
+                    else
+                    {
+                        TheAnimal.NumImage = 0;
+                        updateAnim(TheAnimal.NumImage);
+                        time++;
+                    }
+                }
+                else
+                {
+                    time = 0;
+                    TheAnimal.Animations("Idle");
+                    TheInventory.Product = "Idle";
+                }
+            }
+            else if (TheInventory.Product == "Shower")
+            {
+                Background = Properties.Resources.ShowerBackground;
+                if (time <= 14)
+                {
+                    if (TheAnimal.NumImage <= 7)
+                    {
+                        updateAnim(TheAnimal.NumImage);
+                        time++;
+                        TheAnimal.NumImage++;
+                    }
+                    else
+                    {
+                        TheAnimal.NumImage = 0;
+                    }
+                }
+                else
+                {
+                    time = 0;
+                    Background = Properties.Resources.BackgroundHome;
+                    TheAnimal.Animations("Idle");
+                    TheInventory.Product = "Idle";
+
+                }
+                this.Refresh();
+            }
+            else if (TheInventory.Product == "Brush")
+            {
+                if (time <= 10)
+                {
+                    if (TheAnimal.NumImage == 0)
+                    {
+                        TheAnimal.NumImage = 1;
+                        updateAnim(TheAnimal.NumImage);
+                        time++;
+                    }
+                    else
+                    {
+                        TheAnimal.NumImage = 0;
+                        updateAnim(TheAnimal.NumImage);
+                        time++;
+                    }
+                }
+                else
+                {
+                    time = 0;
+                    TheAnimal.Animations("Idle");
+                    TheInventory.Product = "Idle";
+                }
+            }
+            else if (animName == "Idle" || TheInventory.Product == "Idle")
+            {
+                if (TheAnimal.NumImage <= 1)
+                {
+                    updateAnim(TheAnimal.NumImage);
+                    TheAnimal.NumImage++;
+                }
+                else
+                {
+                    updateAnim(TheAnimal.NumImage);
+                    TheAnimal.NumImage = 0;
+                }
+
+            }
+        }
+
+        private void VirtualAnimalView_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawImage(Background, 218, 12);
         }
         #endregion
 

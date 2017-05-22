@@ -17,6 +17,7 @@ namespace VirtualAnimal
         private double _money;
         private DataRecovery _saveOrRecover;
         private List<Image> _anim;
+        private int numImage;
 
         public List<Image> Anim
         {
@@ -57,6 +58,12 @@ namespace VirtualAnimal
             set { _saveOrRecover = value; }
         }
 
+        public int NumImage
+        {
+            get { return numImage; }
+            set { numImage = value; }
+        }
+
         // Constructor
         public Animal()
         {
@@ -90,25 +97,80 @@ namespace VirtualAnimal
             {
                 case "Idle":
                     {
+                        NumImage = 0;
+                        this.Anim.Clear();
+                        for (int i = 0; i <= 2; i++)
+                        {
+                            string ImageName = "Idle" + i;
+                            this.Anim.Add((Image)Properties.Resources.ResourceManager.GetObject(ImageName, Properties.Resources.Culture));
+                        }
                         break;
                     }
                 case "Walk":
                     {
-                        this.Happiness = this.Happiness + 3;
-                        this.Energy = this.Energy - 3;
-                        this.Hygene = this.Hygene - 3;
+                        NumImage = 0;
+                        this.Anim.Clear();
+                        this.Anim.Add(Properties.Resources.walk0);
+                        this.Anim.Add(Properties.Resources.walk1);
+                        if (this.Happiness + 30 > 100)
+                        {
+                            this.Happiness = 100;
+                        }
+                        else
+                        {
+                            this.Happiness = this.Happiness + 30;
+                        }
+                        if (this.Hygene - 30 < 0)
+                        {
+                            this.Hygene = 0;
+                        }
+                        else
+                        {
+                            this.Hygene = this.Hygene - 30;
+                        }
+                        if (this.Energy - 30 < 0)
+                        {
+                            this.Energy = 0;
+                        }
+                        else
+                        {
+                            this.Energy = this.Energy - 30;
+                        }
                         break;
                     }
                 case "Happy":
                     {
-                        this.Happiness = this.Happiness + 1;
+                        NumImage = 0;
+                        this.Anim.Clear();
+                        for (int i = 0; i <= 8; i++)
+                        {
+                            string ImageName = "Happy" + i;
+                            this.Anim.Add((Image)Properties.Resources.ResourceManager.GetObject(ImageName, Properties.Resources.Culture));
+                        }
+                        if (this.Happiness + 20 > 100)
+                        {
+                            this.Happiness = 100;
+                        }
+                        else
+                        {
+                            this.Happiness = this.Happiness + 20;
+                        }
                         break;
                     }
                 case "Eat":
                     {
-                        this.Health = this.Health + 2;
+                        NumImage = 0;
+                        this.Anim.Clear();
                         this.Anim.Add(Properties.Resources.Eat1);
                         this.Anim.Add(Properties.Resources.Eat2);
+                        if (this.Health + 40 > 100)
+                        {
+                            this.Health = 100;
+                        }
+                        else
+                        {
+                            this.Health = this.Health + 40;
+                        }
                         break;
                     }
                 case "Dead":
@@ -117,17 +179,45 @@ namespace VirtualAnimal
                     }
                 case "Shower":
                     {
-                        this.Hygene = this.Hygene + 2;
+                        NumImage = 0;
+                        this.Anim.Clear();
+                        for (int i = 0; i <= 7; i++)
+                        {
+                            string ImageName = "Shower" + i;
+                            this.Anim.Add((Image)Properties.Resources.ResourceManager.GetObject(ImageName, Properties.Resources.Culture));
+                        }
+                        if(this.Hygene + 40 > 100)
+                        {
+                            this.Hygene = 100;
+                        }
+                        else
+                        {
+                            this.Hygene = this.Hygene + 40;
+                        }
                         break;
                     }
                 case "Brush":
                     {
-                        this.Hygene = this.Hygene + 1;
+                        NumImage = 0;
+                        Anim.Clear();
+                        this.Anim.Add(Properties.Resources.brush0);
+                        this.Anim.Add(Properties.Resources.brush1);
+
+                        if (this.Hygene + 20 > 100)
+                        {
+                            this.Hygene = 100;
+                        }
+                        else
+                        {
+                            this.Hygene = this.Hygene + 20;
+                        }
                         break;
                     }
                 case "Sleep":
                     {
-                        for (int i = 0; i <= 16; i++)
+                        NumImage = 0;
+                        this.Anim.Clear();
+                        for (int i = 0; i <= 18; i++)
                         {
                             string ImageName = "Sleep_Nap" + i;
                             this.Anim.Add((Image)Properties.Resources.ResourceManager.GetObject(ImageName, Properties.Resources.Culture));
@@ -137,11 +227,26 @@ namespace VirtualAnimal
                     }
                 case "Nap":
                     {
-                        this.Energy = this.Energy + 2;
+                        NumImage = 0;
+                        this.Anim.Clear();
+                        for (int i = 0; i <= 18; i++)
+                        {
+                            string ImageName = "Sleep_Nap" + i;
+                            this.Anim.Add((Image)Properties.Resources.ResourceManager.GetObject(ImageName, Properties.Resources.Culture));
+                        }
+                        if (this.Energy + 40 > 100)
+                        {
+                            this.Energy = 100;
+                        }
+                        else
+                        {
+                            this.Energy = this.Energy + 40;
+                        }
                         break;
                     }
                 case "House_Backgroud":
                     {
+                        
                         break;
                     }
                 case "Street_Backgroud":

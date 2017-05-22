@@ -46,8 +46,6 @@ namespace VirtualAnimal
             set { _saveOrRecover = value; }
         }
 
-        
-
         public Inventory()
         {
             SaveOrRecover = new DataRecovery();

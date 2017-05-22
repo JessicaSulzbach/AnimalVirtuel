@@ -118,11 +118,83 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BackgroundHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackgroundHome.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Born0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Born0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Born1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Born1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Born2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Born2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Born3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Born3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Born4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Born4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Born5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Born5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Born6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Born6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Born7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Born7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Born8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Born8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brush0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brush0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brush1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brush1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Eat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eat1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Eat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Eat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eat2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Eat2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Happy0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Happy0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Happy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Happy1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Happy2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Happy2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Happy3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Happy3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Happy4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Happy4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Happy5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Happy5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Happy6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Happy6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Happy7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Happy7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Happy8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Happy8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Idle0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Idle0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Idle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Idle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Idle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Idle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Product_name_and_price" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Product_name_and_price.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -130,55 +202,94 @@
   <data name="Save_Animal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Save_Animal.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="Shower0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shower0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shower1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shower1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shower2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shower2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shower3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shower3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shower4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shower4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shower5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shower5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shower6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shower6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shower7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shower7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShowerBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShowerBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Sleep_Nap0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap0.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap10.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap11.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap12.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap13" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap13.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap14" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap14.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap15" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap15.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap16.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sleep_Nap17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sleep_Nap17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sleep_Nap18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sleep_Nap18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap3.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap4.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap5.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap6.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap7.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap8.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sleep_Nap9.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Sleep_Nap9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="walk0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\walk0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="walk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\walk1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

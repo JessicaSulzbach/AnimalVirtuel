@@ -68,11 +68,11 @@ namespace VirtualAnimal
                     myKey = ((RadioButton)tlpMaterials.Controls["rdbMaterial" + (i)]).Text;
                     myValue = Convert.ToInt32(((Label)tlpMaterials.Controls["lblMaterial" + (i)]).Text);
 
-                    TheInventory.DataInventoryFULL[myKey] = myValue - 1;
-                    TheInventory.DataInventoryHALF[myKey] = myValue - 1;
-
                     if (myValue != 0)
                     {
+                        TheInventory.DataInventoryFULL[myKey] = myValue - 1;
+                        TheInventory.DataInventoryHALF[myKey] = myValue - 1;
+
                         TheInventory.Rewrite();
                         if (myKey == "Shampooing")
                         {
