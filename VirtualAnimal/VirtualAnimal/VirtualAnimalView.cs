@@ -1,4 +1,12 @@
-﻿using System;
+﻿/****************************************************************************
+ * Author       : Jessica Sulzbach
+ * Class        : I.In-P4B
+ * Project      : TPI
+ * Name         : VirtualAnimalView
+ * Description  :
+ * Last modified: 23.05.2017
+ ****************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +26,12 @@ namespace VirtualAnimal
         private Animal _theAnimal;
         private DataRecovery _saveOrRecover;
         private Inventory _theInventory;
+        // Background image
+        private Image background;
+        // Animation variables (time and animation name)
         private int time;
         private string animName;
-        private Image background;
+        
         #endregion
 
         #region Properties
@@ -55,33 +66,58 @@ namespace VirtualAnimal
 
             DoubleBuffered = true;
 
+            // Transparent background for the animal pictureBox
             pbxAnimalAnimation.BackColor = Color.Transparent;
+            // Set the home background image
             Background = Properties.Resources.BackgroundHome;
 
+            // Iniciate class
             TheAnimal = new Animal();
             SaveOrRecover = new DataRecovery();
             TheInventory = new Inventory();
 
+            // Reset the animation variables
             time = 0;
             TheAnimal.NumImage = 0;
             animName = "";
+            TheInventory.Product = "";
         }
         #endregion
 
         private void VirtualAnimalView_Load(object sender, EventArgs e)
         {
-            // Initializes the necessary components 
-            ProgressBarInitialize();
-            AnimationsInitialize();
+            if (TheAnimal.Age == 0)
+            {
+                time = 0;
+                TheInventory.RewriteNew();
+                TheAnimal.NumImage = 0;
+                animName = "Born";
+                TheAnimal.Animations(animName);
+                pbxAnimalAnimation.Location = new Point(234, 114);
+                gbxProgressBar.Visible = false;
+                pbxSmileyFace.Visible = false;
+            }else
+            {
+                animName = "Idle";
+                TheAnimal.Animations(animName);
+            }
+
+                // Iniciate the necessary components for ProgressBar and Animations (value and timer)
+                AnimationsInitialize();
+                ProgressBarInitialize();
 
         }
 
         #region ProgressBar
+        /// <summary>
+        /// Iniciates the progressBars value and timer
+        /// </summary>
         private void ProgressBarInitialize()
         {
-            // Iniciates the value of the progress bar 
+            // Iniciates the progressBars value
             UpdateProgressBar();
 
+            // Iniciates the progressBars timer
             tmrProgressBar.Enabled = true;
             tmrProgressBar.Start();
             tmrProgressBar.Interval = 1000;
@@ -116,25 +152,34 @@ namespace VirtualAnimal
                 TheInventory.Product = "";
                 tmrProgressBar.Stop();
             }
-            // Finir
-            if (TheAnimal.Happiness >= 80 || TheAnimal.Health >= 80 || TheAnimal.Hygene >= 80 || TheAnimal.Energy >= 80)
-            {
-                pbxSmileyFace.Image = Properties.Resources.HappyFace;
-            }
+            
+            // According to life levels the smiley image will change
+            // Condition : The life levels have to be bigger than 50 and smaller then 69
             if ((TheAnimal.Happiness > 50 && TheAnimal.Happiness < 69) || (TheAnimal.Health > 50 && TheAnimal.Health < 69) || (TheAnimal.Hygene > 50 && TheAnimal.Hygene < 69) || (TheAnimal.Energy > 50 && TheAnimal.Energy < 69))
             {
                 pbxSmileyFace.Image = Properties.Resources.MiddleFace;
             }
-            if (TheAnimal.Happiness <= 20 || TheAnimal.Health <= 20 || TheAnimal.Hygene <= 20 || TheAnimal.Energy <= 20)
+            // Condition : The life levels have to smaller than 20 or equal 20
+            else if (TheAnimal.Happiness <= 20 || TheAnimal.Health <= 20 || TheAnimal.Hygene <= 20 || TheAnimal.Energy <= 20)
             {
                 pbxSmileyFace.Image = Properties.Resources.SadFace;
-            } 
+            }
+            // Condition : The life levels are high
+            else
+            {
+                pbxSmileyFace.Image = Properties.Resources.HappyFace;
+            }
 
+            // Counts the aniamls age by seconde
             TheAnimal.Age++;
 
+            // Updates the progressBar life levels
             UpdateProgressBar();
         }
 
+        /// <summary>
+        /// Updates the progressBar life levels with the life level values
+        /// </summary>
         private void UpdateProgressBar()
         {
             prbEnergy.Value = TheAnimal.Energy;
@@ -152,19 +197,27 @@ namespace VirtualAnimal
 
         private void btnAnimal_Click(object sender, EventArgs e)
         {
+            // Opens the contextMenuStrip under the button, giving the illusion of a dropdown button
             cmsForAnimalButton.Show(btnAnimal, new Point(0, btnAnimal.Height));
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
+            // Opens the contextMenuStrip under the button, giving the illusion of a dropdown button
             cmsForInventoryButton.Show(btnInventory, new Point(0, btnInventory.Height));
         }
 
         private void btnGoOut_Click(object sender, EventArgs e)
         {
+            // Opens the contextMenuStrip under the button, giving the illusion of a dropdown button
             cmsForGoOutButton.Show(btnGoOut, new Point(0, btnGoOut.Height));
         }
 
+        /// <summary>
+        /// Prepares the images and updates the life levels for animation HAPPY
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsmPet_Click(object sender, EventArgs e)
         {
             TheAnimal.NumImage = 0;
@@ -173,6 +226,11 @@ namespace VirtualAnimal
             UpdateProgressBar();
         }
 
+        /// <summary>
+        /// Prepares the images and updates the life levels for animation SLEEP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsmSleep_Click(object sender, EventArgs e)
         {
             TheAnimal.NumImage = 0;
@@ -182,6 +240,11 @@ namespace VirtualAnimal
 
         }
 
+        /// <summary>
+        /// Prepares the images for animation SLEEP and updates the life levels for NAP
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsmNap_Click(object sender, EventArgs e)
         {
             TheAnimal.NumImage = 0;
@@ -190,6 +253,11 @@ namespace VirtualAnimal
             UpdateProgressBar();
         }
 
+        /// <summary>
+        /// Prepares the images and updates the life levels for animation Walk
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsmWalk_Click(object sender, EventArgs e)
         {
             TheAnimal.NumImage = 0;
@@ -200,25 +268,31 @@ namespace VirtualAnimal
         #endregion
 
         #region OpenForms
-
+        // Opens the store view as the child of VirtualAnimalView
         private void tsmStore_Click(object sender, EventArgs e)
         {
             VirtualAnimalStore store = new VirtualAnimalStore();
             store.ShowDialog(this);
         }
 
+        // Opens the food view as the child of VirtualAnimalView
         private void tsmFood_Click(object sender, EventArgs e)
         {
             VirtualAnimalFood food = new VirtualAnimalFood(TheInventory);
             food.ShowDialog(this);
+
+            // Iniciates the images and updates progressBar according to the Product use
             TheAnimal.Animations(TheInventory.Product);
             UpdateProgressBar();
         }
 
+        // Opens the materials view as the child of VirtualAnimalView
         private void tsmMaterials_Click(object sender, EventArgs e)
         {
             VirtualAnimalMaterials materials = new VirtualAnimalMaterials(TheInventory);
             materials.ShowDialog(this);
+
+            // Iniciates the images and updates progressBar according to the Product use
             TheAnimal.Animations(TheInventory.Product);
             UpdateProgressBar();
         }
@@ -228,18 +302,26 @@ namespace VirtualAnimal
         #region Animations
         private void AnimationsInitialize()
         {
-            animName = "Idle";
-            TheAnimal.Animations(animName);
+            // Iniciates the animation timer
             tmrAnimalAnimations.Enabled = true;
             tmrAnimalAnimations.Start();
             tmrAnimalAnimations.Interval = 150;
         }
 
+        /// <summary>
+        /// Updates the image in the pictureBox
+        /// </summary>
+        /// <param name="numImage">The image number</param>
         private void updateAnim(int numImage)
         {
             this.pbxAnimalAnimation.Image = TheAnimal.Anim[numImage];
         }
 
+        /// <summary>
+        /// Every tick it checks for conditions. If conditions are true then a animation will start.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tmrAnimalAnimations_Tick(object sender, EventArgs e)
         {
             if (animName == "Happy" || TheInventory.Product == "Happy")
@@ -485,22 +567,25 @@ namespace VirtualAnimal
         {
             tmrProgressBar.Enabled = false;
 
-            this.TheAnimal.Animal_Save(TheAnimal.Health);
-            this.TheAnimal.Animal_Save(TheAnimal.Hygene);
-            this.TheAnimal.Animal_Save(TheAnimal.Energy);
-            this.TheAnimal.Animal_Save(TheAnimal.Happiness);
-            this.TheAnimal.Animal_Save(Convert.ToInt32(TheAnimal.Money));
+            this.TheAnimal.AnimalSave(TheAnimal.Health);
+            this.TheAnimal.AnimalSave(TheAnimal.Hygene);
+            this.TheAnimal.AnimalSave(TheAnimal.Energy);
+            this.TheAnimal.AnimalSave(TheAnimal.Happiness);
+            this.TheAnimal.AnimalSave(Convert.ToInt32(TheAnimal.Money));
 
-            this.TheAnimal.SaveOrRecover.FileWritter("AnimalAge.txt", Convert.ToString(TheAnimal.Age));
+            TheAnimal.SaveOrRecover.FirstTime = true;
+            this.TheAnimal.SaveOrRecover.FileWritter("Animal_Age_Name.txt", TheAnimal.Name);
+            this.TheAnimal.SaveOrRecover.FileWritter("Animal_Age_Name.txt", Convert.ToString(TheAnimal.Age));
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             TheAnimal.Name = tbxName.Text;
             tbxName.Text = "";
-            
-            TheAnimal.SaveOrRecover.FileWritter("Animal_Age_Name.txt", Convert.ToString(0));
+
+            TheAnimal.SaveOrRecover.FirstTime = true;
             TheAnimal.SaveOrRecover.FileWritter("Animal_Age_Name.txt", TheAnimal.Name);
+            TheAnimal.SaveOrRecover.FileWritter("Animal_Age_Name.txt", Convert.ToString(0));
 
             lblName.Visible = false;
             tbxName.Visible = false;
@@ -511,7 +596,8 @@ namespace VirtualAnimal
             background = Properties.Resources.BackgroundHome;
             this.Refresh();
             pbxAnimalAnimation.Location = new Point(353, 187);
-
+            animName = "Idle";
+            TheAnimal.Animations(animName);
             AnimationsInitialize();
             ProgressBarInitialize();
         }

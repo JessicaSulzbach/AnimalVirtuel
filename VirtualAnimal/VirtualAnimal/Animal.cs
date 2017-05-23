@@ -1,4 +1,12 @@
-﻿using System;
+﻿/****************************************************************************
+ * Author       : Jessica Sulzbach
+ * Class        : I.In-P4B
+ * Project      : TPI
+ * Name         : Animal
+ * Description  :
+ * Last modified: 23.05.2017
+ ****************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -89,11 +97,11 @@ namespace VirtualAnimal
         {
             SaveOrRecover = new DataRecovery();
             Anim = new List<Image>();
-            Animal_Recover();
+            AnimalRecover();
         }
 
         // Methods
-        public void Animal_Recover()
+        public void AnimalRecover()
         {
             SaveOrRecover.FileReader("Save_Animal.txt");
             this.Health = SaveOrRecover.DataToRecover_Animal["Health"];
@@ -103,11 +111,11 @@ namespace VirtualAnimal
             this.Money = SaveOrRecover.DataToRecover_Animal["Money"];
 
             SaveOrRecover.FileReader("Animal_Age_Name.txt");
-            this.Age=Convert.ToInt32(SaveOrRecover.SeperateData[0]);
-            this.Name = SaveOrRecover.SeperateData[1];
+            this.Age=Convert.ToInt32(SaveOrRecover.SeperateData[1]);
+            this.Name = SaveOrRecover.SeperateData[0];
         }
 
-        public void Animal_Save(int Save)
+        public void AnimalSave(int Save)
         {
             SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(Save));
         }

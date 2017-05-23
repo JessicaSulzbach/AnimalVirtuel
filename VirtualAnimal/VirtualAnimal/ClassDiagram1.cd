@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="VirtualAnimal.Inventory">
+    <Position X="9" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEDAAAACAAAAAAAAIAAAAAYAAQUAAAAEIAAQAAEABI=</HashCode>
+      <FileName>Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VirtualAnimal.DataRecovery">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAgQAAAAAAAAAAAAABAAAAKAAAAAAAACBAAAAAAAAg=</HashCode>
+      <FileName>DataRecovery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VirtualAnimal.Store">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAQAAAAQAQAAAAAAAAEABAAAAAAAg=</HashCode>
+      <FileName>Store.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VirtualAnimal.VirtualAnimalFood" Collapsed="true">
+    <Position X="6" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ggAAAYQAACAAAggAAASAAABCAAAAAAAAAAACAAABAAA=</HashCode>
+      <FileName>VirtualAnimalFood.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VirtualAnimal.VirtualAnimalMaterials" Collapsed="true">
+    <Position X="6" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAQQAACAAAAgCgACAAABCAAAEEAAAAAEAIAAAAAQ=</HashCode>
+      <FileName>VirtualAnimalMaterials.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VirtualAnimal.VirtualAnimalStore" Collapsed="true">
+    <Position X="5" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAIACQAAACCAAAAAAACgAIAKABACQBABEAAAAIEEQAA=</HashCode>
+      <FileName>VirtualAnimalStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VirtualAnimal.VirtualAnimalView" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IQwBAcUABayAsDgBECWACAGSUAADABioEQAgEQCDIJI=</HashCode>
+      <FileName>VirtualAnimalView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VirtualAnimal.Animal">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAUCAgAAAEJwABAAEgEAAUQQAAEgAAAGIAAAAEAAAA=</HashCode>
+      <FileName>Animal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

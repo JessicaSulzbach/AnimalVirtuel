@@ -97,6 +97,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -265,9 +266,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sleep_Nap16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\smoke0.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ShowerBackground.png" />

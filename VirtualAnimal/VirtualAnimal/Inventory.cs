@@ -1,4 +1,12 @@
-﻿using System;
+﻿/****************************************************************************
+ * Author       : Jessica Sulzbach
+ * Class        : I.In-P4B
+ * Project      : TPI
+ * Name         : Inventory
+ * Description  :
+ * Last modified: 23.05.2017
+ ****************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +17,6 @@ namespace VirtualAnimal
     public class Inventory
     {
         private DataRecovery _saveOrRecover;
-        private Animal _TheAnimal;
         private Dictionary<string, int> _dataInventoryHALF;
         private Dictionary<string, int> _dataInventoryFULL;
         private string _product;
@@ -22,11 +29,6 @@ namespace VirtualAnimal
 
         public const int LAST_OF_FOODS = 8;
 
-        public Animal TheAnimal
-        {
-            get { return _TheAnimal; }
-            set { _TheAnimal = value; }
-        }
         public Dictionary<string, int> DataInventoryFULL
         {
             get { return _dataInventoryFULL; }
@@ -49,7 +51,6 @@ namespace VirtualAnimal
         public Inventory()
         {
             SaveOrRecover = new DataRecovery();
-            TheAnimal = new Animal();
             DataInventoryHALF = new Dictionary<string, int>();
             DataInventoryFULL = new Dictionary<string, int>();
 
@@ -111,7 +112,7 @@ namespace VirtualAnimal
         }
 
         public void Rewrite()
-        {
+         {
             SaveOrRecover.FirstTime = true;
 
             for (int i = 0; i <= SaveOrRecover.SeperateData.Count - 3; i++)

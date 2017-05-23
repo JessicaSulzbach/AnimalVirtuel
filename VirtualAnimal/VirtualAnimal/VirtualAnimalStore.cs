@@ -1,4 +1,12 @@
-﻿using System;
+﻿/****************************************************************************
+ * Author       : Jessica Sulzbach
+ * Class        : I.In-P4B
+ * Project      : TPI
+ * Name         : VirtualAnimalStore
+ * Description  :
+ * Last modified: 23.05.2017
+ ****************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

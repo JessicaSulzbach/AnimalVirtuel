@@ -185,7 +185,7 @@
             this.btnGoOut.Name = "btnGoOut";
             this.btnGoOut.Size = new System.Drawing.Size(112, 30);
             this.btnGoOut.TabIndex = 4;
-            this.btnGoOut.Text = "Sortir";
+            this.btnGoOut.Text = "Activités";
             this.btnGoOut.UseVisualStyleBackColor = true;
             this.btnGoOut.Click += new System.EventHandler(this.btnGoOut_Click);
             // 
