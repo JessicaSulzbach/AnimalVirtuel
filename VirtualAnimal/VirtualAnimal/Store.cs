@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VirtualAnimal
 {
-    class Store
+    public class Store
     {
         private DataRecovery _saveOrRecover;
         private Dictionary<string, double> _dataStore;
@@ -49,8 +49,9 @@ namespace VirtualAnimal
             }
         }
 
-        public void Sell(List<int> NewQuantity)
+        public void Sell(List<int> NewQuantity, int TotalCost)
         {
+            SaveOrRecover.FileReader("Product_name_and_price.txt");
             SaveOrRecover.FirstTime = true;
 
             List<int> OldQuantity = new List<int>();
@@ -80,6 +81,19 @@ namespace VirtualAnimal
                 }
             }
 
+            SaveOrRecover.FirstTime = true;
+            SaveOrRecover.DataToRecover_Animal["Money"] = SaveOrRecover.DataToRecover_Animal["Money"] - TotalCost;
+            foreach (var pair in SaveOrRecover.DataToRecover_Animal)
+            {
+                SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(pair.Value));
+            }
+            
+
+        }
+
+        public void Money()
+        {
+            SaveOrRecover.FileReader("Save_Animal.txt");
         }
     }
 }

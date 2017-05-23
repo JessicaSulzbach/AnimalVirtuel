@@ -14,7 +14,9 @@ namespace VirtualAnimal
     {
         private Store _theStore;
         private const int NUMBER_OF_PRODUCTS = 7;
-        internal Store TheStore
+        public int TotalPrice = 0;
+
+        public Store TheStore
         {
             get { return _theStore; }
             set { _theStore = value; }
@@ -48,23 +50,21 @@ namespace VirtualAnimal
                 Column++;
             }
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < NUMBER_OF_PRODUCTS; i++)
             {
                 ((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).KeyPress += new KeyPressEventHandler(Filter);
+                ((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).KeyUp += new KeyEventHandler(CalculateTolatPrice);
             }
 
-            
+            TheStore.Money();
+            this.lblMoney.Text = Convert.ToString(TheStore.SaveOrRecover.DataToRecover_Animal["Money"]);
         }
 
-        public void Filter(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsPunctuation(e.KeyChar)) e.Handled = true;
-        }
-
-        public void Buy()
+        public void CalculateTolatPrice(object sender, KeyEventArgs e)
         {
             List<int> QntyList = new List<int>();
             int[] t = new int[NUMBER_OF_PRODUCTS];
+
             for (int i = 0; i < NUMBER_OF_PRODUCTS; i++)
             {
                 if (tlpStore.Controls["tbxQnty" + (i + 1)].Text == "")
@@ -77,11 +77,55 @@ namespace VirtualAnimal
                 }
 
                 QntyList.Add(t[i]);
+            }
+
+            int listIndex = 0;
+            TotalPrice = 0;
+            foreach (var pair in TheStore.DataStore)
+            {
+                TotalPrice += Convert.ToInt32(pair.Value * QntyList[listIndex]);
+                listIndex++;
+            }
+
+            this.lblPrice.Text = Convert.ToString(TotalPrice);
+        }
+
+        public void Filter(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsPunctuation(e.KeyChar)) e.Handled = true;
+        }
+
+        public void Buy()
+        {
+            List<int> QntyList = new List<int>();
+            int numberOfZero = 0;
+            int[] t = new int[NUMBER_OF_PRODUCTS];
+            for (int i = 0; i < NUMBER_OF_PRODUCTS; i++)
+            {
+                if (tlpStore.Controls["tbxQnty" + (i + 1)].Text == "")
+                {
+                    t[i] = 0;
+                    numberOfZero++;
+                }
+                else
+                {
+                    t[i] = Convert.ToInt32(((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).Text);
+                }
+
+                QntyList.Add(t[i]);
                 ((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).Text = "";
 
             }
 
-            this.TheStore.Sell(QntyList);
+            if (numberOfZero < NUMBER_OF_PRODUCTS && TheStore.SaveOrRecover.DataToRecover_Animal["Money"] - TotalPrice >= 0) 
+            {
+                this.TheStore.Sell(QntyList, TotalPrice);
+                
+            }
+            else if (TheStore.SaveOrRecover.DataToRecover_Animal["Money"] - TotalPrice < 0)
+            {
+                MessageBox.Show("Désolé, mais vous n'avez pas azzes d'argent... Allez faire une promenade pour trouver plus d'argent!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void bntBack_Click(object sender, EventArgs e)

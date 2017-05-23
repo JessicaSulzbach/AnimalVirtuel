@@ -15,9 +15,12 @@ namespace VirtualAnimal
         private int _health;
         private int _happiness;
         private double _money;
+        private string name;
+        private int age;
         private DataRecovery _saveOrRecover;
         private List<Image> _anim;
         private int numImage;
+        private Dictionary<int, double> gifts = new Dictionary<int, double>();
 
         public List<Image> Anim
         {
@@ -25,7 +28,6 @@ namespace VirtualAnimal
             set { _anim = value; }
         }
 
-        
         // Properties 
         public int Hygene
         {
@@ -64,6 +66,24 @@ namespace VirtualAnimal
             set { numImage = value; }
         }
 
+        public Dictionary<int, double> Gifts
+        {
+            get { return gifts; }
+            set { gifts = value; }
+        }
+
+        public int Age
+        {
+            get { return age; }
+            set { age = value; }
+        }
+
+        public string Name
+        {
+            get{ return name; }
+            set{ name = value; }
+        }
+
         // Constructor
         public Animal()
         {
@@ -80,20 +100,21 @@ namespace VirtualAnimal
             this.Hygene = SaveOrRecover.DataToRecover_Animal["Hygene"];
             this.Energy = SaveOrRecover.DataToRecover_Animal["Energy"];
             this.Happiness = SaveOrRecover.DataToRecover_Animal["Happiness"];
-            //this.Money = SaveOrRecover.DataToRecover_Animal["Money"];
+            this.Money = SaveOrRecover.DataToRecover_Animal["Money"];
+
+            SaveOrRecover.FileReader("Animal_Age_Name.txt");
+            this.Age=Convert.ToInt32(SaveOrRecover.SeperateData[0]);
+            this.Name = SaveOrRecover.SeperateData[1];
         }
 
-        public void Animal_Save(int SavePrbHealth, int SavePrbHygene, int SavePrbEnergy, int SavePrbHappyiness)
-         {
-             SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(SavePrbHealth));
-             SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(SavePrbHygene));
-             SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(SavePrbEnergy));
-             SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(SavePrbHappyiness));
+        public void Animal_Save(int Save)
+        {
+            SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(Save));
         }
 
         public void Animations(string Animation)
         {
-            switch(Animation)
+            switch (Animation)
             {
                 case "Idle":
                     {
@@ -108,10 +129,29 @@ namespace VirtualAnimal
                     }
                 case "Walk":
                     {
+                        Gifts.Clear();
+                        Random rSec = new Random();
+                        Random r = new Random();
+                        int numberOfGifts = r.Next(1, 6);
+
+                        for (int i = 0; i < numberOfGifts; i++)
+                        {
+                            int key = rSec.Next(1, 26);
+                            if (!Gifts.ContainsKey(key))
+                            {
+                                Gifts.Add(key, r.Next(5, 51));
+                            }
+                            else
+                            {
+                                i--;
+                            }
+                        }
+
                         NumImage = 0;
                         this.Anim.Clear();
                         this.Anim.Add(Properties.Resources.walk0);
                         this.Anim.Add(Properties.Resources.walk1);
+
                         if (this.Happiness + 30 > 100)
                         {
                             this.Happiness = 100;
@@ -186,7 +226,7 @@ namespace VirtualAnimal
                             string ImageName = "Shower" + i;
                             this.Anim.Add((Image)Properties.Resources.ResourceManager.GetObject(ImageName, Properties.Resources.Culture));
                         }
-                        if(this.Hygene + 40 > 100)
+                        if (this.Hygene + 40 > 100)
                         {
                             this.Hygene = 100;
                         }
@@ -244,17 +284,34 @@ namespace VirtualAnimal
                         }
                         break;
                     }
-                case "House_Backgroud":
+                case "Death":
                     {
-                        
+                        this.Anim.Clear();
+                        for (int i = 0; i <= 4; i++)
+                        {
+                            string ImageName = "death" + i;
+                            this.Anim.Add((Image)Properties.Resources.ResourceManager.GetObject(ImageName, Properties.Resources.Culture));
+                        }
                         break;
                     }
-                case "Street_Backgroud":
+                case "Born":
                     {
+                        this.Anim.Clear();
+                        for (int i = 0; i <= 8; i++)
+                        {
+                            string ImageName = "Born" + i;
+                            this.Anim.Add((Image)Properties.Resources.ResourceManager.GetObject(ImageName, Properties.Resources.Culture));
+                        }
+                        this.Energy = 100;
+                        this.Happiness = 100;
+                        this.Health = 100;
+                        this.Hygene = 100;
+                        this.Money = 100;
+
                         break;
                     }
             }
-            
+
         }
 
     }

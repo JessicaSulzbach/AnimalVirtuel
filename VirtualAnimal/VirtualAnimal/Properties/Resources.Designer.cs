@@ -63,6 +63,16 @@ namespace VirtualAnimal.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BackgroundHome {
             get {
                 object obj = ResourceManager.GetObject("BackgroundHome", resourceCulture);
@@ -183,6 +193,56 @@ namespace VirtualAnimal.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap death0 {
+            get {
+                object obj = ResourceManager.GetObject("death0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap death1 {
+            get {
+                object obj = ResourceManager.GetObject("death1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap death2 {
+            get {
+                object obj = ResourceManager.GetObject("death2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap death3 {
+            get {
+                object obj = ResourceManager.GetObject("death3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap death4 {
+            get {
+                object obj = ResourceManager.GetObject("death4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Eat1 {
             get {
                 object obj = ResourceManager.GetObject("Eat1", resourceCulture);
@@ -293,6 +353,16 @@ namespace VirtualAnimal.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HappyFace {
+            get {
+                object obj = ResourceManager.GetObject("HappyFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Idle0 {
             get {
                 object obj = ResourceManager.GetObject("Idle0", resourceCulture);
@@ -321,13 +391,23 @@ namespace VirtualAnimal.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Riz;15.00;10
-        ///Sushi;35.00;0
-        ///Bonbons;10.00;0
-        ///Shampooing;18.50;34
-        ///Brosse;12.00;1
-        ///Papillon bleu;500.00;0
-        ///Ruban rose;500.00;0
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MiddleFace {
+            get {
+                object obj = ResourceManager.GetObject("MiddleFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Riz;15.00;494
+        ///Sushi;35.00;17
+        ///Bonbons;10.00;7
+        ///Shampooing;18.50;41
+        ///Brosse;12.00;2
+        ///Papillon bleu;500.00;10
+        ///Ruban rose;500.00;10
         ///.
         /// </summary>
         internal static string Product_name_and_price {
@@ -337,10 +417,26 @@ namespace VirtualAnimal.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à 31
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SadFace {
+            get {
+                object obj = ResourceManager.GetObject("SadFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à 60
         ///0
         ///0
-        ///0
+        ///84
+        ///410
+        ///95
+        ///95
+        ///95
+        ///95
+        ///100
         ///.
         /// </summary>
         internal static string Save_Animal {
@@ -645,6 +741,16 @@ namespace VirtualAnimal.Properties {
         internal static System.Drawing.Bitmap walk1 {
             get {
                 object obj = ResourceManager.GetObject("walk1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WalkBackground {
+            get {
+                object obj = ResourceManager.GetObject("WalkBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

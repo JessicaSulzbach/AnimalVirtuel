@@ -131,5 +131,28 @@ namespace VirtualAnimal
                 }
             }
         }
+
+        public void RewriteNew()
+        {
+            InventoryData();
+            SaveOrRecover.FirstTime = true;
+
+            for (int i = 0; i <= SaveOrRecover.SeperateData.Count - 3; i++)
+            {
+                for (int y = 1; y <= SaveOrRecover.SeperateData.Count - 2; y++)
+                {
+                    foreach (var pair in DataInventoryFULL)
+                    {
+                        string FinalLineToSave = string.Format("{0};{1};{2}", SaveOrRecover.SeperateData[i], SaveOrRecover.SeperateData[y], 0);
+                        SaveOrRecover.FileWritter("Product_name_and_price.txt", FinalLineToSave);
+                        if (i < SaveOrRecover.SeperateData.Count - 3)
+                        {
+                            i = i + 3;
+                            y = y + 3;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

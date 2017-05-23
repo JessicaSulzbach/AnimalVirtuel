@@ -292,4 +292,34 @@
   <data name="walk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\walk1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="WalkBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WalkBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="death0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="death1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="death2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="death3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="death4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HappyFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HappyFace.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MiddleFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MiddleFace.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SadFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SadFace.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

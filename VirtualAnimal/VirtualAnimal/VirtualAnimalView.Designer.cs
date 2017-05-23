@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbxProgressBar = new System.Windows.Forms.GroupBox();
             this.prbHappiness = new System.Windows.Forms.ProgressBar();
             this.prbEnergy = new System.Windows.Forms.ProgressBar();
             this.prbHygene = new System.Windows.Forms.ProgressBar();
@@ -55,28 +55,34 @@
             this.tmrProgressBar = new System.Windows.Forms.Timer(this.components);
             this.tmrAnimalAnimations = new System.Windows.Forms.Timer(this.components);
             this.pbxAnimalAnimation = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
+            this.lblGift = new System.Windows.Forms.Label();
+            this.pbxSmileyFace = new System.Windows.Forms.PictureBox();
+            this.tbxName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.gbxProgressBar.SuspendLayout();
             this.cmsForAnimalButton.SuspendLayout();
             this.cmsForInventoryButton.SuspendLayout();
             this.cmsForGoOutButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxAnimalAnimation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSmileyFace)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbxProgressBar
             // 
-            this.groupBox1.Controls.Add(this.prbHappiness);
-            this.groupBox1.Controls.Add(this.prbEnergy);
-            this.groupBox1.Controls.Add(this.prbHygene);
-            this.groupBox1.Controls.Add(this.prbHealth);
-            this.groupBox1.Controls.Add(this.lblHappiness);
-            this.groupBox1.Controls.Add(this.lblEnergy);
-            this.groupBox1.Controls.Add(this.lblHygene);
-            this.groupBox1.Controls.Add(this.lblHealth);
-            this.groupBox1.Location = new System.Drawing.Point(12, 144);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 156);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.gbxProgressBar.Controls.Add(this.prbHappiness);
+            this.gbxProgressBar.Controls.Add(this.prbEnergy);
+            this.gbxProgressBar.Controls.Add(this.prbHygene);
+            this.gbxProgressBar.Controls.Add(this.prbHealth);
+            this.gbxProgressBar.Controls.Add(this.lblHappiness);
+            this.gbxProgressBar.Controls.Add(this.lblEnergy);
+            this.gbxProgressBar.Controls.Add(this.lblHygene);
+            this.gbxProgressBar.Controls.Add(this.lblHealth);
+            this.gbxProgressBar.Location = new System.Drawing.Point(12, 144);
+            this.gbxProgressBar.Name = "gbxProgressBar";
+            this.gbxProgressBar.Size = new System.Drawing.Size(200, 156);
+            this.gbxProgressBar.TabIndex = 0;
+            this.gbxProgressBar.TabStop = false;
             // 
             // prbHappiness
             // 
@@ -244,7 +250,7 @@
             this.tsmStore,
             this.tsmWalk});
             this.cmsForGoOutButton.Name = "cmsForGoOutButton";
-            this.cmsForGoOutButton.Size = new System.Drawing.Size(168, 70);
+            this.cmsForGoOutButton.Size = new System.Drawing.Size(168, 48);
             // 
             // tsmStore
             // 
@@ -270,23 +276,82 @@
             // 
             // pbxAnimalAnimation
             // 
-            this.pbxAnimalAnimation.Location = new System.Drawing.Point(352, 214);
+            this.pbxAnimalAnimation.Location = new System.Drawing.Point(353, 187);
             this.pbxAnimalAnimation.Name = "pbxAnimalAnimation";
             this.pbxAnimalAnimation.Size = new System.Drawing.Size(100, 99);
             this.pbxAnimalAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxAnimalAnimation.TabIndex = 8;
             this.pbxAnimalAnimation.TabStop = false;
             // 
+            // lblGift
+            // 
+            this.lblGift.AutoSize = true;
+            this.lblGift.BackColor = System.Drawing.Color.Transparent;
+            this.lblGift.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGift.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblGift.Location = new System.Drawing.Point(498, 19);
+            this.lblGift.Name = "lblGift";
+            this.lblGift.Size = new System.Drawing.Size(0, 25);
+            this.lblGift.TabIndex = 8;
+            // 
+            // pbxSmileyFace
+            // 
+            this.pbxSmileyFace.Location = new System.Drawing.Point(50, 12);
+            this.pbxSmileyFace.Name = "pbxSmileyFace";
+            this.pbxSmileyFace.Size = new System.Drawing.Size(120, 120);
+            this.pbxSmileyFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxSmileyFace.TabIndex = 9;
+            this.pbxSmileyFace.TabStop = false;
+            // 
+            // tbxName
+            // 
+            this.tbxName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbxName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxName.Location = new System.Drawing.Point(204, 47);
+            this.tbxName.Name = "tbxName";
+            this.tbxName.Size = new System.Drawing.Size(165, 27);
+            this.tbxName.TabIndex = 10;
+            this.tbxName.Visible = false;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblName.Location = new System.Drawing.Point(161, 26);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(275, 18);
+            this.lblName.TabIndex = 8;
+            this.lblName.Text = "Rentrez le nom de votre animal:";
+            this.lblName.Visible = false;
+            // 
+            // btnStart
+            // 
+            this.btnStart.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.Location = new System.Drawing.Point(234, 80);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(112, 30);
+            this.btnStart.TabIndex = 11;
+            this.btnStart.Text = "Commencer";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Visible = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
             // VirtualAnimalView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 357);
+            this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.tbxName);
+            this.Controls.Add(this.pbxSmileyFace);
+            this.Controls.Add(this.lblGift);
             this.Controls.Add(this.pbxAnimalAnimation);
             this.Controls.Add(this.btnGoOut);
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.btnAnimal);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbxProgressBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "VirtualAnimalView";
@@ -295,19 +360,21 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VirtualAnimalView_FormClosing);
             this.Load += new System.EventHandler(this.VirtualAnimalView_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.VirtualAnimalView_Paint);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbxProgressBar.ResumeLayout(false);
+            this.gbxProgressBar.PerformLayout();
             this.cmsForAnimalButton.ResumeLayout(false);
             this.cmsForInventoryButton.ResumeLayout(false);
             this.cmsForGoOutButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxAnimalAnimation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSmileyFace)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbxProgressBar;
         private System.Windows.Forms.ProgressBar prbHappiness;
         private System.Windows.Forms.ProgressBar prbEnergy;
         private System.Windows.Forms.ProgressBar prbHygene;
@@ -333,6 +400,11 @@
         private System.Windows.Forms.Timer tmrProgressBar;
         private System.Windows.Forms.Timer tmrAnimalAnimations;
         private System.Windows.Forms.PictureBox pbxAnimalAnimation;
+        private System.Windows.Forms.Label lblGift;
+        private System.Windows.Forms.PictureBox pbxSmileyFace;
+        private System.Windows.Forms.TextBox tbxName;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnStart;
     }
 }
 

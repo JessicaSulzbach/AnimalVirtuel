@@ -107,6 +107,31 @@ namespace VirtualAnimal
                 TheAnimal.Happiness--;
             }
 
+            if (TheAnimal.Happiness <= 0 || TheAnimal.Health <= 0 || TheAnimal.Hygene <= 0 || TheAnimal.Energy <= 0)
+            {
+                animName = "Death";
+                TheAnimal.NumImage = 0;
+                time = 0;
+                TheAnimal.Animations(animName);
+                TheInventory.Product = "";
+                tmrProgressBar.Stop();
+            }
+            // Finir
+            if (TheAnimal.Happiness >= 80 || TheAnimal.Health >= 80 || TheAnimal.Hygene >= 80 || TheAnimal.Energy >= 80)
+            {
+                pbxSmileyFace.Image = Properties.Resources.HappyFace;
+            }
+            if ((TheAnimal.Happiness > 50 && TheAnimal.Happiness < 69) || (TheAnimal.Health > 50 && TheAnimal.Health < 69) || (TheAnimal.Hygene > 50 && TheAnimal.Hygene < 69) || (TheAnimal.Energy > 50 && TheAnimal.Energy < 69))
+            {
+                pbxSmileyFace.Image = Properties.Resources.MiddleFace;
+            }
+            if (TheAnimal.Happiness <= 20 || TheAnimal.Health <= 20 || TheAnimal.Hygene <= 20 || TheAnimal.Energy <= 20)
+            {
+                pbxSmileyFace.Image = Properties.Resources.SadFace;
+            } 
+
+            TheAnimal.Age++;
+
             UpdateProgressBar();
         }
 
@@ -188,7 +213,6 @@ namespace VirtualAnimal
             food.ShowDialog(this);
             TheAnimal.Animations(TheInventory.Product);
             UpdateProgressBar();
-            AnimationsInitialize();
         }
 
         private void tsmMaterials_Click(object sender, EventArgs e)
@@ -197,7 +221,6 @@ namespace VirtualAnimal
             materials.ShowDialog(this);
             TheAnimal.Animations(TheInventory.Product);
             UpdateProgressBar();
-            AnimationsInitialize();
         }
 
         #endregion
@@ -205,6 +228,8 @@ namespace VirtualAnimal
         #region Animations
         private void AnimationsInitialize()
         {
+            animName = "Idle";
+            TheAnimal.Animations(animName);
             tmrAnimalAnimations.Enabled = true;
             tmrAnimalAnimations.Start();
             tmrAnimalAnimations.Interval = 150;
@@ -256,27 +281,42 @@ namespace VirtualAnimal
             }
             else if (animName == "Walk")
             {
-                if (time <= 20)
+                Background = Properties.Resources.WalkBackground;
+                lblGift.Visible = false;
+                if (time <= 25)
                 {
+                    if (TheAnimal.Gifts.ContainsKey(time))
+                    {
+                        lblGift.Text = " + " + Convert.ToString(TheAnimal.Gifts[time]);
+                        lblGift.Visible = true;
+                        TheAnimal.Money += TheAnimal.Gifts[time];
+                    }
+                    if (time == 0)
+                    {
+                        pbxAnimalAnimation.Location = new Point(218, 210);
+                    }
                     if (TheAnimal.NumImage == 0)
                     {
                         TheAnimal.NumImage = 1;
                         updateAnim(TheAnimal.NumImage);
-                        time++;
                     }
                     else
                     {
                         TheAnimal.NumImage = 0;
                         updateAnim(TheAnimal.NumImage);
-                        time++;
                     }
+                    time++;
+                    pbxAnimalAnimation.Left += 10;
                 }
                 else
                 {
                     time = 0;
+                    Background = Properties.Resources.BackgroundHome;
+                    pbxAnimalAnimation.Location = new Point(352, 211);
                     TheAnimal.Animations("Idle");
                     animName = "Idle";
                 }
+                this.Refresh();
             }
             else if (TheInventory.Product == "Eat")
             {
@@ -366,11 +406,78 @@ namespace VirtualAnimal
                 }
 
             }
+            else if (animName == "Death")
+            {
+                if (time <= 4)
+                {
+                    if (TheAnimal.NumImage <= 4)
+                    {
+                        updateAnim(TheAnimal.NumImage);
+                        time++;
+                        TheAnimal.NumImage++;
+                    }
+                }
+                else
+                {
+                    animName = "";
+                    string playerClass = "";
+                    if(this.TheAnimal.Age <= 599)
+                    {
+                        playerClass = "Il faut fair plus d'effort!";
+                    }
+                    else if(this.TheAnimal.Age >= 600 && this.TheAnimal.Age <=1099)
+                    {
+                        playerClass = "Il y a une marge d'améliorations!";
+                    }
+                    else if (this.TheAnimal.Age >= 1100 && this.TheAnimal.Age <= 1699)
+                    {
+                        playerClass = "Bien jouer!";
+                    }
+                    else if (this.TheAnimal.Age >= 1700 && this.TheAnimal.Age <= 2299)
+                    {
+                        playerClass = "Excellent!";
+                    }
+                    else if (this.TheAnimal.Age >= 2300)
+                    {
+                        playerClass = "Incroyable!!";
+                    }
+
+                    MessageBox.Show("R.I.P " + this.TheAnimal.Name+ "..." + playerClass, "Game over", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    time = 0;
+                    TheInventory.RewriteNew();
+                    TheAnimal.NumImage = 0;
+                    animName = "Born";
+                    TheAnimal.Animations(animName);
+                    pbxAnimalAnimation.Location = new Point(234, 114);
+                    gbxProgressBar.Visible = false;
+                    pbxSmileyFace.Visible = false;
+                }
+            }
+            else if (animName == "Born")
+            {
+                Background = Properties.Resources.background;
+                if (time <= 8)
+                {
+                    if (TheAnimal.NumImage <= 8)
+                    {
+                        updateAnim(TheAnimal.NumImage);
+                        time++;
+                        TheAnimal.NumImage++;
+                    }
+                }
+                else
+                {
+                    lblName.Visible = true;
+                    tbxName.Visible = true;
+                    btnStart.Visible = true; 
+                }
+                this.Refresh();
+            }
         }
 
         private void VirtualAnimalView_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawImage(Background, 218, 12);
+            e.Graphics.DrawImage(Background, 218, 12, 350, 297);
         }
         #endregion
 
@@ -378,7 +485,35 @@ namespace VirtualAnimal
         {
             tmrProgressBar.Enabled = false;
 
-            this.TheAnimal.Animal_Save(TheAnimal.Health, TheAnimal.Hygene, TheAnimal.Energy, TheAnimal.Happiness);
+            this.TheAnimal.Animal_Save(TheAnimal.Health);
+            this.TheAnimal.Animal_Save(TheAnimal.Hygene);
+            this.TheAnimal.Animal_Save(TheAnimal.Energy);
+            this.TheAnimal.Animal_Save(TheAnimal.Happiness);
+            this.TheAnimal.Animal_Save(Convert.ToInt32(TheAnimal.Money));
+
+            this.TheAnimal.SaveOrRecover.FileWritter("AnimalAge.txt", Convert.ToString(TheAnimal.Age));
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            TheAnimal.Name = tbxName.Text;
+            tbxName.Text = "";
+            
+            TheAnimal.SaveOrRecover.FileWritter("Animal_Age_Name.txt", Convert.ToString(0));
+            TheAnimal.SaveOrRecover.FileWritter("Animal_Age_Name.txt", TheAnimal.Name);
+
+            lblName.Visible = false;
+            tbxName.Visible = false;
+            btnStart.Visible = false;
+            gbxProgressBar.Visible = true;
+            pbxSmileyFace.Visible = true;
+
+            background = Properties.Resources.BackgroundHome;
+            this.Refresh();
+            pbxAnimalAnimation.Location = new Point(353, 187);
+
+            AnimationsInitialize();
+            ProgressBarInitialize();
         }
     }
 }

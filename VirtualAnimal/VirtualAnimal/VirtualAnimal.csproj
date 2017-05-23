@@ -287,6 +287,31 @@
   <ItemGroup>
     <None Include="Resources\brush1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WalkBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\death0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\death1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\death2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\death3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\death4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Animal_Age_Name.txt" />
+    <None Include="Resources\SadFace.PNG" />
+    <None Include="Resources\MiddleFace.PNG" />
+    <None Include="Resources\HappyFace.PNG" />
+    <None Include="Resources\background.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
