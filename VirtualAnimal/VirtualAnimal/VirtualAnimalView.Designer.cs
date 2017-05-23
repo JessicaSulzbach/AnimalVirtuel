@@ -57,9 +57,9 @@
             this.pbxAnimalAnimation = new System.Windows.Forms.PictureBox();
             this.lblGift = new System.Windows.Forms.Label();
             this.pbxSmileyFace = new System.Windows.Forms.PictureBox();
+            this.btnStart = new System.Windows.Forms.Button();
             this.tbxName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnStart = new System.Windows.Forms.Button();
             this.gbxProgressBar.SuspendLayout();
             this.cmsForAnimalButton.SuspendLayout();
             this.cmsForInventoryButton.SuspendLayout();
@@ -303,6 +303,18 @@
             this.pbxSmileyFace.TabIndex = 9;
             this.pbxSmileyFace.TabStop = false;
             // 
+            // btnStart
+            // 
+            this.btnStart.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.Location = new System.Drawing.Point(234, 80);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(112, 30);
+            this.btnStart.TabIndex = 11;
+            this.btnStart.Text = "Commencer";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Visible = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
             // tbxName
             // 
             this.tbxName.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -324,18 +336,6 @@
             this.lblName.TabIndex = 8;
             this.lblName.Text = "Rentrez le nom de votre animal:";
             this.lblName.Visible = false;
-            // 
-            // btnStart
-            // 
-            this.btnStart.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(234, 80);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(112, 30);
-            this.btnStart.TabIndex = 11;
-            this.btnStart.Text = "Commencer";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Visible = false;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // VirtualAnimalView
             // 
@@ -402,9 +402,9 @@
         private System.Windows.Forms.PictureBox pbxAnimalAnimation;
         private System.Windows.Forms.Label lblGift;
         private System.Windows.Forms.PictureBox pbxSmileyFace;
+        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.TextBox tbxName;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Button btnStart;
     }
 }
 

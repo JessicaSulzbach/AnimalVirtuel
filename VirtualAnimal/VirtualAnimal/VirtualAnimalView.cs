@@ -96,7 +96,11 @@ namespace VirtualAnimal
                 pbxAnimalAnimation.Location = new Point(234, 114);
                 gbxProgressBar.Visible = false;
                 pbxSmileyFace.Visible = false;
-            }else
+                btnAnimal.Visible = false;
+                btnGoOut.Visible = false;
+                btnInventory.Visible = false;
+            }
+            else
             {
                 pbxAnimalAnimation.Location = new Point(352, 187);
                 animName = "Idle";
@@ -536,6 +540,9 @@ namespace VirtualAnimal
                     pbxAnimalAnimation.Location = new Point(234, 114);
                     gbxProgressBar.Visible = false;
                     pbxSmileyFace.Visible = false;
+                    btnAnimal.Visible = false;
+                    btnGoOut.Visible = false;
+                    btnInventory.Visible = false;
                 }
             }
             else if (animName == "Born")
@@ -554,7 +561,7 @@ namespace VirtualAnimal
                 {
                     lblName.Visible = true;
                     tbxName.Visible = true;
-                    btnStart.Visible = true; 
+                    btnStart.Visible = true;
                 }
                 this.Refresh();
             }
@@ -570,6 +577,7 @@ namespace VirtualAnimal
         {
             tmrProgressBar.Enabled = false;
 
+            TheAnimal.SaveOrRecover.FirstTime = true;
             this.TheAnimal.AnimalSave(TheAnimal.Health);
             this.TheAnimal.AnimalSave(TheAnimal.Hygene);
             this.TheAnimal.AnimalSave(TheAnimal.Energy);
@@ -595,6 +603,9 @@ namespace VirtualAnimal
             btnStart.Visible = false;
             gbxProgressBar.Visible = true;
             pbxSmileyFace.Visible = true;
+            btnAnimal.Visible = true;
+            btnGoOut.Visible = true;
+            btnInventory.Visible = true;
 
             background = Properties.Resources.BackgroundHome;
             pbxAnimalAnimation.Location = new Point(353, 165);
