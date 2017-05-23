@@ -118,193 +118,75 @@
     <None Include="Resources\Product_name_and_price.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Born8.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Born0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Born1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Born2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Born3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Born4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Born5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Born6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Born7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Eat1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Eat2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Happy8.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Happy0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Happy1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Happy2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Happy3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Happy4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Happy5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Happy6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Happy7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Idle0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Idle1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Idle2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Shower0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Shower1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Shower2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Shower3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Shower4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Shower5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Shower6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Shower7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap17.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap18.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap8.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap9.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap10.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap11.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap12.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap13.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap14.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap15.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sleep_Nap16.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ShowerBackground.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BackgroundHome.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\walk0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\walk1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\brush0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\brush1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\WalkBackground.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\death0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\death1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\death2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\death3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\death4.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Resources\Animal_Age_Name.txt" />
+    <None Include="Resources\walk1.png" />
+    <None Include="Resources\walk0.png" />
+    <None Include="Resources\Sleep_Nap16.png" />
+    <None Include="Resources\Sleep_Nap15.png" />
+    <None Include="Resources\Sleep_Nap14.png" />
+    <None Include="Resources\Sleep_Nap13.png" />
+    <None Include="Resources\Sleep_Nap12.png" />
+    <None Include="Resources\Sleep_Nap11.png" />
+    <None Include="Resources\Sleep_Nap10.png" />
+    <None Include="Resources\Sleep_Nap9.png" />
+    <None Include="Resources\Sleep_Nap8.png" />
+    <None Include="Resources\Sleep_Nap7.png" />
+    <None Include="Resources\Sleep_Nap6.png" />
+    <None Include="Resources\Sleep_Nap5.png" />
+    <None Include="Resources\Sleep_Nap4.png" />
+    <None Include="Resources\Sleep_Nap3.png" />
+    <None Include="Resources\Sleep_Nap2.png" />
+    <None Include="Resources\Sleep_Nap1.png" />
+    <None Include="Resources\Sleep_Nap0.png" />
+    <None Include="Resources\Sleep_Nap18.png" />
+    <None Include="Resources\Sleep_Nap17.png" />
+    <None Include="Resources\Shower3.png" />
+    <None Include="Resources\Shower2.png" />
+    <None Include="Resources\Shower1.png" />
+    <None Include="Resources\Shower0.png" />
+    <None Include="Resources\Shower7.png" />
+    <None Include="Resources\Shower6.png" />
+    <None Include="Resources\Shower5.png" />
+    <None Include="Resources\Shower4.png" />
+    <None Include="Resources\Idle2.png" />
+    <None Include="Resources\Idle1.png" />
+    <None Include="Resources\Idle0.png" />
+    <None Include="Resources\Happy4.png" />
+    <None Include="Resources\Happy3.png" />
+    <None Include="Resources\Happy2.png" />
+    <None Include="Resources\Happy1.png" />
+    <None Include="Resources\Happy0.png" />
+    <None Include="Resources\Happy8.png" />
+    <None Include="Resources\Happy7.png" />
+    <None Include="Resources\Happy6.png" />
+    <None Include="Resources\Happy5.png" />
+    <None Include="Resources\Eat2.png" />
+    <None Include="Resources\Eat1.png" />
+    <None Include="Resources\death4.png" />
+    <None Include="Resources\death3.png" />
+    <None Include="Resources\death2.png" />
+    <None Include="Resources\death1.png" />
+    <None Include="Resources\death0.png" />
+    <None Include="Resources\brush1.png" />
+    <None Include="Resources\brush0.png" />
+    <None Include="Resources\Born2.png" />
+    <None Include="Resources\Born1.png" />
+    <None Include="Resources\Born0.png" />
+    <None Include="Resources\Born8.png" />
+    <None Include="Resources\Born7.png" />
+    <None Include="Resources\Born6.png" />
+    <None Include="Resources\Born5.png" />
+    <None Include="Resources\Born4.png" />
+    <None Include="Resources\Born3.png" />
     <None Include="Resources\SadFace.PNG" />
     <None Include="Resources\MiddleFace.PNG" />
     <None Include="Resources\HappyFace.PNG" />

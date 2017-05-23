@@ -121,6 +121,30 @@
   <data name="BackgroundHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroundHome.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Product_name_and_price" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Product_name_and_price.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Save_Animal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_Animal.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ShowerBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShowerBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WalkBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WalkBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HappyFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HappyFace.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MiddleFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MiddleFace.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SadFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SadFace.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Born0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Born0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,6 +177,21 @@
   </data>
   <data name="brush1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brush1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="death0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="death1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="death2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="death3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="death4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\death4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Eat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Eat1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,12 +235,6 @@
   <data name="Idle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Idle2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Product_name_and_price" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Product_name_and_price.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Save_Animal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save_Animal.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Shower0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shower0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -225,9 +258,6 @@
   </data>
   <data name="Shower7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shower7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ShowerBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ShowerBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sleep_Nap0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sleep_Nap0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -291,35 +321,5 @@
   </data>
   <data name="walk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\walk1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WalkBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WalkBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="death0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\death0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="death1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\death1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="death2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\death2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="death3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\death3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="death4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\death4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HappyFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HappyFace.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MiddleFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MiddleFace.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SadFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SadFace.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

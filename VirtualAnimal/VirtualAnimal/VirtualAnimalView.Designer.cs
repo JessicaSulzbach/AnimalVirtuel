@@ -276,7 +276,7 @@
             // 
             // pbxAnimalAnimation
             // 
-            this.pbxAnimalAnimation.Location = new System.Drawing.Point(353, 187);
+            this.pbxAnimalAnimation.Location = new System.Drawing.Point(352, 187);
             this.pbxAnimalAnimation.Name = "pbxAnimalAnimation";
             this.pbxAnimalAnimation.Size = new System.Drawing.Size(100, 99);
             this.pbxAnimalAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

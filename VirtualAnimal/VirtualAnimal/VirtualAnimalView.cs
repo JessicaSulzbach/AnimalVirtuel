@@ -98,6 +98,7 @@ namespace VirtualAnimal
                 pbxSmileyFace.Visible = false;
             }else
             {
+                pbxAnimalAnimation.Location = new Point(352, 187);
                 animName = "Idle";
                 TheAnimal.Animations(animName);
             }
@@ -262,6 +263,7 @@ namespace VirtualAnimal
         {
             TheAnimal.NumImage = 0;
             animName = "Walk";
+            TheInventory.Product = "";
             TheAnimal.Animations(animName);
             UpdateProgressBar();
         }
@@ -375,7 +377,7 @@ namespace VirtualAnimal
                     }
                     if (time == 0)
                     {
-                        pbxAnimalAnimation.Location = new Point(218, 210);
+                        pbxAnimalAnimation.Location = new Point(218, 165);
                     }
                     if (TheAnimal.NumImage == 0)
                     {
@@ -394,7 +396,7 @@ namespace VirtualAnimal
                 {
                     time = 0;
                     Background = Properties.Resources.BackgroundHome;
-                    pbxAnimalAnimation.Location = new Point(352, 211);
+                    pbxAnimalAnimation.Location = new Point(352, 187);
                     TheAnimal.Animations("Idle");
                     animName = "Idle";
                 }
@@ -526,6 +528,7 @@ namespace VirtualAnimal
 
                     MessageBox.Show("R.I.P " + this.TheAnimal.Name+ "..." + playerClass, "Game over", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                     time = 0;
+                    TheAnimal.Age = 0;
                     TheInventory.RewriteNew();
                     TheAnimal.NumImage = 0;
                     animName = "Born";
@@ -594,8 +597,8 @@ namespace VirtualAnimal
             pbxSmileyFace.Visible = true;
 
             background = Properties.Resources.BackgroundHome;
+            pbxAnimalAnimation.Location = new Point(353, 165);
             this.Refresh();
-            pbxAnimalAnimation.Location = new Point(353, 187);
             animName = "Idle";
             TheAnimal.Animations(animName);
             AnimationsInitialize();
