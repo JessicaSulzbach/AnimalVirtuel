@@ -1,9 +1,10 @@
 ﻿/****************************************************************************
  * Author       : Jessica Sulzbach
  * Class        : I.In-P4B
- * Project      : TPI
- * Name         : Animal
- * Description  :
+ * Project      : TPI - Virtual animal
+ * Name         : Store
+ * Description  : This class wroks with the Inventory and manages 
+ *                the products being bought from the store and the money
  * Last modified: 23.05.2017
  ****************************************************************************/
 using System;
@@ -16,9 +17,14 @@ namespace VirtualAnimal
 {
     public class Store
     {
+        #region Variables
+        // Variables
         private DataRecovery _saveOrRecover;
         private Dictionary<string, double> _dataStore;
+        #endregion
 
+        #region Properties
+        // Properties 
         public Dictionary<string, double> DataStore
         {
             get { return _dataStore; }
@@ -30,17 +36,30 @@ namespace VirtualAnimal
             get { return _saveOrRecover; }
             set { _saveOrRecover = value; }
         }
+        #endregion
 
+        #region Constructor
+        // Constructor
         public Store()
         {
+            // Initiates
             SaveOrRecover = new DataRecovery();
             DataStore = new Dictionary<string, double>();
 
+            // Read the Product_name_and_price test file for the data
             SaveOrRecover.FileReader("Product_name_and_price.txt");
 
             StoreData();
         }
+        #endregion
 
+        #region Methods
+        // Methods
+
+        /// <summary>
+        /// Prepares the the data we nedd for the store
+        /// Only the products name and price
+        /// </summary>
         public void StoreData()
         {
             DataStore.Clear();
@@ -57,6 +76,14 @@ namespace VirtualAnimal
             }
         }
 
+        /// <summary>
+        /// Adds new and old quantity
+        /// New quantity is saved
+        /// Subtracts the total price from the money
+        /// New money amount saved
+        /// </summary>
+        /// <param name="NewQuantity">List of the new quantitites</param>
+        /// <param name="TotalCost">Price of groceries</param>
         public void Sell(List<int> NewQuantity, int TotalCost)
         {
             SaveOrRecover.FileReader("Product_name_and_price.txt");
@@ -67,11 +94,12 @@ namespace VirtualAnimal
             {
                 OldQuantity.Add(Convert.ToInt32(SaveOrRecover.SeperateData[i]));
             }
+            // New quantity
             for (int i = 0; i < NewQuantity.Count; i++)
             {
                 NewQuantity[i] = NewQuantity[i] + OldQuantity[i];
             }
-
+            // Saveing quantity
             for (int i = 0; i < SaveOrRecover.SeperateData.Count - 2; i++)
             {
                 for (int y = 1; y < SaveOrRecover.SeperateData.Count - 1; y++)
@@ -89,6 +117,7 @@ namespace VirtualAnimal
                 }
             }
 
+            // Money
             SaveOrRecover.FirstTime = true;
             SaveOrRecover.DataToRecover_Animal["Money"] = SaveOrRecover.DataToRecover_Animal["Money"] - TotalCost;
             foreach (var pair in SaveOrRecover.DataToRecover_Animal)
@@ -99,9 +128,13 @@ namespace VirtualAnimal
 
         }
 
+        /// <summary>
+        /// Reads the Save_animal text file for the data
+        /// </summary>
         public void Money()
         {
             SaveOrRecover.FileReader("Save_Animal.txt");
         }
+        #endregion
     }
 }

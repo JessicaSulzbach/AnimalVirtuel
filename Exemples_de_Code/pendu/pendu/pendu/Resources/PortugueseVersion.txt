@@ -1,0 +1,19 @@
+Jogo da Forca
+Arquivo
+Novo
+Resposta
+Lingua
+Franceis
+Portugues
+Ingles
+Sair
+Ajuda
+Nova palavra
+Resposta
+Dica : 2
+Dica : 1
+Dica : 0
+Você perdeu, a palavra escondida era
+Jogo perdido
+Parabens! Você ganhou!
+Jogo ganhado

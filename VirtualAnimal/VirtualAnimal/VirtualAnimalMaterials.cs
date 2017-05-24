@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
  * Author       : Jessica Sulzbach
  * Class        : I.In-P4B
- * Project      : TPI
+ * Project      : TPI - Virtual animal
  * Name         : VirtualAnimalMaterials
- * Description  :
+ * Description  : Materials form
  * Last modified: 23.05.2017
  ****************************************************************************/
 using System;
@@ -20,8 +20,10 @@ namespace VirtualAnimal
 {
     public partial class VirtualAnimalMaterials : Form
     {
+        // Variable
         private Inventory _theInventory;
 
+        // Propertie
         internal Inventory TheInventory
         {
             get { return _theInventory; }
@@ -42,6 +44,9 @@ namespace VirtualAnimal
             UpdateView();
         }
 
+        /// <summary>
+        /// Fills the table panel layout with the labels and radio buttons necessary
+        /// </summary>
         private void UpdateView()
         {
             TheInventory.SaveOrRecover.FileReader("Product_name_and_price.txt");
@@ -60,11 +65,10 @@ namespace VirtualAnimal
             }
         }
 
-        private void btnMaterialsBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        /// <summary>
+        /// Quantity minus 1
+        /// Closes the form and a animation plays
+        /// </summary>
         private void btnMaterialsUse_Click(object sender, EventArgs e)
         {
             string myKey;
@@ -100,6 +104,10 @@ namespace VirtualAnimal
             this.Close();
         }
 
+        /// <summary>
+        /// Form stays open.
+        /// The quantity equals 0
+        /// </summary>
         private void btnMaterialsSell_Click(object sender, EventArgs e)
         {
             for (int i = 1; i <= TheInventory.DataInventoryHALF.Count; i++)
@@ -118,6 +126,11 @@ namespace VirtualAnimal
 
             }
             UpdateView();
+        }
+
+        private void btnMaterialsBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

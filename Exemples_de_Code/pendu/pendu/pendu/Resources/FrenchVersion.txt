@@ -1,0 +1,18 @@
+Jeu du pendu
+Fichier
+Nouveau
+Solution Langue
+Francais
+Portuguais
+Anglais
+Quitter
+Aide
+Nouveau mot
+Solution
+Indice : 2
+Indice : 1
+Indice : 0
+Vous avez perdu, le mot a trouvé était
+Partie terminée!
+Felicitations! Vous avez gagné!
+Partie gagné

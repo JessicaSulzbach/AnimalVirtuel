@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VirtualAnimalView));
             this.gbxProgressBar = new System.Windows.Forms.GroupBox();
             this.prbHappiness = new System.Windows.Forms.ProgressBar();
             this.prbEnergy = new System.Windows.Forms.ProgressBar();
@@ -353,6 +354,7 @@
             this.Controls.Add(this.btnAnimal);
             this.Controls.Add(this.gbxProgressBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "VirtualAnimalView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

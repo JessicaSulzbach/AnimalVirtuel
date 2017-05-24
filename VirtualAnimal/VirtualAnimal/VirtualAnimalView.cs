@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
  * Author       : Jessica Sulzbach
  * Class        : I.In-P4B
- * Project      : TPI
+ * Project      : TPI - Virtual animal
  * Name         : VirtualAnimalView
- * Description  :
+ * Description  : Main form
  * Last modified: 23.05.2017
  ****************************************************************************/
 using System;
@@ -60,6 +60,7 @@ namespace VirtualAnimal
         #endregion
 
         #region Constructor
+        //Constructor
         public VirtualAnimalView()
         {
             InitializeComponent();
@@ -86,6 +87,7 @@ namespace VirtualAnimal
 
         private void VirtualAnimalView_Load(object sender, EventArgs e)
         {
+            // If new game
             if (TheAnimal.Age == 0)
             {
                 time = 0;
@@ -100,6 +102,7 @@ namespace VirtualAnimal
                 btnGoOut.Visible = false;
                 btnInventory.Visible = false;
             }
+            // If continuing game
             else
             {
                 pbxAnimalAnimation.Location = new Point(352, 187);
@@ -128,6 +131,7 @@ namespace VirtualAnimal
             tmrProgressBar.Interval = 1000;
         }
 
+        // If the value is higher then 0, then minus 1
         private void tmrProgressBar_Tick(object sender, EventArgs e)
         {
             if (TheAnimal.Health > 0)
@@ -148,6 +152,7 @@ namespace VirtualAnimal
                 TheAnimal.Happiness--;
             }
 
+            // If one of the life levels equal 0 or less -> GAME OVER
             if (TheAnimal.Happiness <= 0 || TheAnimal.Health <= 0 || TheAnimal.Hygene <= 0 || TheAnimal.Energy <= 0)
             {
                 animName = "Death";
@@ -199,7 +204,6 @@ namespace VirtualAnimal
         #endregion
 
         #region DropDownButtons
-
         private void btnAnimal_Click(object sender, EventArgs e)
         {
             // Opens the contextMenuStrip under the button, giving the illusion of a dropdown button
@@ -398,6 +402,14 @@ namespace VirtualAnimal
                 }
                 else
                 {
+                    // To save the money
+                    TheAnimal.SaveOrRecover.FirstTime = true;
+                    this.TheAnimal.AnimalSave(TheAnimal.Health);
+                    this.TheAnimal.AnimalSave(TheAnimal.Hygene);
+                    this.TheAnimal.AnimalSave(TheAnimal.Energy);
+                    this.TheAnimal.AnimalSave(TheAnimal.Happiness);
+                    this.TheAnimal.AnimalSave(Convert.ToInt32(TheAnimal.Money));
+
                     time = 0;
                     Background = Properties.Resources.BackgroundHome;
                     pbxAnimalAnimation.Location = new Point(352, 187);
@@ -575,6 +587,7 @@ namespace VirtualAnimal
 
         private void VirtualAnimalView_FormClosing(object sender, FormClosingEventArgs e)
         {
+
             tmrProgressBar.Enabled = false;
 
             TheAnimal.SaveOrRecover.FirstTime = true;

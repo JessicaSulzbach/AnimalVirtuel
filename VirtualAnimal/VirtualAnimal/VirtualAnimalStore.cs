@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
  * Author       : Jessica Sulzbach
  * Class        : I.In-P4B
- * Project      : TPI
+ * Project      : TPI - Virtual animal
  * Name         : VirtualAnimalStore
- * Description  :
+ * Description  : Store form
  * Last modified: 23.05.2017
  ****************************************************************************/
 using System;
@@ -20,15 +20,21 @@ namespace VirtualAnimal
 {
     public partial class VirtualAnimalStore : Form
     {
+        #region Variables
+        // Variables
         private Store _theStore;
         private const int NUMBER_OF_PRODUCTS = 7;
         public int TotalPrice = 0;
+        #endregion
 
+        #region Properties
+        // Properties
         public Store TheStore
         {
             get { return _theStore; }
             set { _theStore = value; }
         }
+        #endregion
 
         public VirtualAnimalStore()
         {
@@ -41,15 +47,24 @@ namespace VirtualAnimal
             UpdateView();
         }
 
+        #region Methods
+        //Methods
+
+        /// <summary>
+        /// Fills the table panel layout with the labels and textboxes necessary
+        /// </summary>
         private void UpdateView()
         {
             tlpStore.Controls.Clear();
 
             int Column = 1;
 
+            // Titles
             tlpStore.Controls.Add(new Label() { Text = "Produits", Anchor = AnchorStyles.None, AutoSize = true, Font = new Font("Verdana", 12, FontStyle.Bold) }, 0, 0);
             tlpStore.Controls.Add(new Label() { Text = "Prix", Anchor = AnchorStyles.None, AutoSize = true, Font = new Font("Verdana", 12, FontStyle.Bold) }, 1, 0);
             tlpStore.Controls.Add(new Label() { Text = "Qnt", Anchor = AnchorStyles.None, AutoSize = true, Font = new Font("Verdana", 12, FontStyle.Bold) }, 2, 0);
+
+            // Products and price
             foreach (var pair in TheStore.DataStore)
             {
                 tlpStore.Controls.Add(new Label() { Text = pair.Key, Anchor = AnchorStyles.Left, AutoSize = true, Font = new Font("Verdana", 12, FontStyle.Regular) }, 0, Column);
@@ -58,16 +73,21 @@ namespace VirtualAnimal
                 Column++;
             }
 
+            // Adds evenements 
             for (int i = 0; i < NUMBER_OF_PRODUCTS; i++)
             {
                 ((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).KeyPress += new KeyPressEventHandler(Filter);
                 ((TextBox)tlpStore.Controls["tbxQnty" + (i + 1)]).KeyUp += new KeyEventHandler(CalculateTolatPrice);
             }
 
+            // Money
             TheStore.Money();
             this.lblMoney.Text = Convert.ToString(TheStore.SaveOrRecover.DataToRecover_Animal["Money"]);
         }
 
+        /// <summary>
+        /// Calculates the total price each time a key is pressed up
+        /// </summary>
         public void CalculateTolatPrice(object sender, KeyEventArgs e)
         {
             List<int> QntyList = new List<int>();
@@ -98,6 +118,9 @@ namespace VirtualAnimal
             this.lblPrice.Text = Convert.ToString(TotalPrice);
         }
 
+        /// <summary>
+        /// Filters the input allowed in the textBox
+        /// </summary>
         public void Filter(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsPunctuation(e.KeyChar)) e.Handled = true;
@@ -143,7 +166,6 @@ namespace VirtualAnimal
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-
             this.Buy();
         }
 
@@ -152,5 +174,6 @@ namespace VirtualAnimal
             this.Buy();
             this.Close();
         }
+        #endregion
     }
 }

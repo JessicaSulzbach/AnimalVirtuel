@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VirtualAnimalFood));
             this.btnFoodUse = new System.Windows.Forms.Button();
             this.btnFoodSell = new System.Windows.Forms.Button();
             this.btnFoodBack = new System.Windows.Forms.Button();
@@ -96,6 +97,7 @@
             this.Controls.Add(this.btnFoodSell);
             this.Controls.Add(this.btnFoodUse);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VirtualAnimalFood";

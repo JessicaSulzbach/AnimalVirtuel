@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
  * Author       : Jessica Sulzbach
  * Class        : I.In-P4B
- * Project      : TPI
+ * Project      : TPI - Virtual animal
  * Name         : Animal
- * Description  :
+ * Description  : This class manages the life levels, money and animations
  * Last modified: 23.05.2017
  ****************************************************************************/
 using System;
@@ -17,25 +17,32 @@ namespace VirtualAnimal
 {
     public class Animal
     {
-        //Variables
+        #region Variables
+        // Variables
+        // Niveaux de vie
         private int _hygene;
         private int _energy;
         private int _health;
         private int _happiness;
+
+        // Monnaie
         private double _money;
+
+        // Nom et age
         private string name;
         private int age;
-        private DataRecovery _saveOrRecover;
+
+        // Animation
         private List<Image> _anim;
         private int numImage;
+        // Promenade
         private Dictionary<int, double> gifts = new Dictionary<int, double>();
 
-        public List<Image> Anim
-        {
-            get { return _anim; }
-            set { _anim = value; }
-        }
+        // Class de reucperation et enregistrement
+        private DataRecovery _saveOrRecover;
+        #endregion
 
+        #region Properties
         // Properties 
         public int Hygene
         {
@@ -91,7 +98,14 @@ namespace VirtualAnimal
             get{ return name; }
             set{ name = value; }
         }
+        public List<Image> Anim
+        {
+            get { return _anim; }
+            set { _anim = value; }
+        }
+        #endregion
 
+        #region Constructor
         // Constructor
         public Animal()
         {
@@ -99,8 +113,14 @@ namespace VirtualAnimal
             Anim = new List<Image>();
             AnimalRecover();
         }
+        #endregion
 
+        #region Methods
         // Methods
+
+        /// <summary>
+        /// Recovers the data and initiates the properties
+        /// </summary>
         public void AnimalRecover()
         {
             SaveOrRecover.FileReader("Save_Animal.txt");
@@ -115,11 +135,19 @@ namespace VirtualAnimal
             this.Name = SaveOrRecover.SeperateData[0];
         }
 
+        /// <summary>
+        /// Saves the data in the Save_Animal.txt
+        /// </summary>
+        /// <param name="Save">Text to be writen in text file</param>
         public void AnimalSave(int Save)
         {
             SaveOrRecover.FileWritter("Save_Animal.txt", Convert.ToString(Save));
         }
 
+        /// <summary>
+        /// According to the animation name, the images of the animation will be added to the image list
+        /// </summary>
+        /// <param name="Animation">Animation name</param>
         public void Animations(string Animation)
         {
             switch (Animation)
@@ -316,11 +344,17 @@ namespace VirtualAnimal
                         this.Hygene = 100;
                         this.Money = 100;
 
+                        SaveOrRecover.FirstTime = true;
+                        this.AnimalSave(Health);
+                        this.AnimalSave(Hygene);
+                        this.AnimalSave(Energy);
+                        this.AnimalSave(Happiness);
+                        this.AnimalSave(Convert.ToInt32(Money));
+
                         break;
                     }
             }
-
         }
-
+        #endregion
     }
 }

@@ -79,7 +79,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Store.cs" />
-    <Compile Include="VirtualViewModel.cs" />
     <EmbeddedResource Include="VirtualAnimalFood.resx">
       <DependentUpon>VirtualAnimalFood.cs</DependentUpon>
     </EmbeddedResource>

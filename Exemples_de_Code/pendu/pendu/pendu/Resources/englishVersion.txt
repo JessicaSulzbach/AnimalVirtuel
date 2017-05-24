@@ -1,0 +1,27 @@
+this.btnNew.Text = "New word"
+
+this.btnHint.Text = "Hint : 2" 
+this.btnHint.Text = "Hint : 1" // if clicked 
+this.btnHint.Text = "Hint : 0" // if clicked again
+
+this.btnAnswer.Text = "Answer";
+
+this.Text = "Hangman";
+
+private void checkIfLost(int nbr)
+        {
+            if (nbr == 11)
+            {
+                MessageBox.Show("You have lost, the hidden word was " + wordToFind, "Game over!");
+                restartGame();
+            }
+        }
+
+private void ifWon()
+        {
+	    if (correctGuesses.Count == wordToFind.Length)
+            {
+                MessageBox.Show("Bravo! You have won!", "Game won!");
+                restartGame();
+            }
+	}

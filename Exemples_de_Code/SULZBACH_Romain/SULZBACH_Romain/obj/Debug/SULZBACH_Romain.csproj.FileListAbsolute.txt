@@ -1,0 +1,9 @@
+C:\Users\SULZBACHJ_INFO\Desktop\SULZBACH_Romain\SULZBACH_Romain\bin\Debug\SULZBACH_Romain.exe.config
+C:\Users\SULZBACHJ_INFO\Desktop\SULZBACH_Romain\SULZBACH_Romain\bin\Debug\SULZBACH_Romain.exe
+C:\Users\SULZBACHJ_INFO\Desktop\SULZBACH_Romain\SULZBACH_Romain\bin\Debug\SULZBACH_Romain.pdb
+C:\Users\SULZBACHJ_INFO\Desktop\SULZBACH_Romain\SULZBACH_Romain\obj\Debug\SULZBACH_Romain.csprojResolveAssemblyReference.cache
+C:\Users\SULZBACHJ_INFO\Desktop\SULZBACH_Romain\SULZBACH_Romain\obj\Debug\SULZBACH_Romain.Form1.resources
+C:\Users\SULZBACHJ_INFO\Desktop\SULZBACH_Romain\SULZBACH_Romain\obj\Debug\SULZBACH_Romain.Properties.Resources.resources
+C:\Users\SULZBACHJ_INFO\Desktop\SULZBACH_Romain\SULZBACH_Romain\obj\Debug\SULZBACH_Romain.csproj.GenerateResource.Cache
+C:\Users\SULZBACHJ_INFO\Desktop\SULZBACH_Romain\SULZBACH_Romain\obj\Debug\SULZBACH_Romain.exe
+C:\Users\SULZBACHJ_INFO\Desktop\SULZBACH_Romain\SULZBACH_Romain\obj\Debug\SULZBACH_Romain.pdb

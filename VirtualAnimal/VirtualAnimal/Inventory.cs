@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
  * Author       : Jessica Sulzbach
  * Class        : I.In-P4B
- * Project      : TPI
+ * Project      : TPI - Virtual animal
  * Name         : Inventory
- * Description  :
+ * Description  : This class manages the add and subtract of products  
  * Last modified: 23.05.2017
  ****************************************************************************/
 using System;
@@ -16,11 +16,16 @@ namespace VirtualAnimal
 {
     public class Inventory
     {
+        #region Variables
+        // Variables
         private DataRecovery _saveOrRecover;
         private Dictionary<string, int> _dataInventoryHALF;
         private Dictionary<string, int> _dataInventoryFULL;
         private string _product;
+        #endregion
 
+        #region Properties
+        // Properties
         public string Product
         {
             get { return _product; }
@@ -47,16 +52,26 @@ namespace VirtualAnimal
             get { return _saveOrRecover; }
             set { _saveOrRecover = value; }
         }
+        #endregion
 
+        #region Constructor
+        // Constructor
         public Inventory()
         {
+            // Initiates
             SaveOrRecover = new DataRecovery();
             DataInventoryHALF = new Dictionary<string, int>();
             DataInventoryFULL = new Dictionary<string, int>();
 
             SaveOrRecover.FileReader("Product_name_and_price.txt");
         }
+        #endregion
 
+        #region Methods
+        // Methods
+        /// <summary>
+        /// Adds all the products data to the list
+        /// </summary>
         public void InventoryData()
         {
             DataInventoryFULL.Clear();
@@ -73,6 +88,10 @@ namespace VirtualAnimal
             }
         }
 
+        /// <summary>
+        /// Adds certain product data to the list
+        /// </summary>
+        /// <param name="NameView">Type of products</param>
         public void InventoryData(string NameView)
         {
             DataInventoryHALF.Clear();
@@ -106,11 +125,19 @@ namespace VirtualAnimal
             }
         }
 
+        /// <summary>
+        /// Initiates the Product variable with the name of the products
+        /// This will be usefull when calling an animation
+        /// </summary>
+        /// <param name="ProductName">The selected products name</param>
         public void Use(string ProductName)
         {
             Product = ProductName;
         }
 
+        /// <summary>
+        /// Rewrites the Save_Aniaml text file with the new quantity
+        /// </summary>
         public void Rewrite()
          {
             SaveOrRecover.FirstTime = true;
@@ -133,6 +160,10 @@ namespace VirtualAnimal
             }
         }
 
+        /// <summary>
+        /// Rewrites the Save_Aniaml text file with all quantities at 0
+        /// For starting new game
+        /// </summary>
         public void RewriteNew()
         {
             InventoryData();
@@ -155,5 +186,6 @@ namespace VirtualAnimal
                 }
             }
         }
+        #endregion
     }
 }
